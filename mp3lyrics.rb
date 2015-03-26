@@ -1,0 +1,73 @@
+require 'mp3info'
+require 'net/http'
+require 'nokogiri'
+
+override = false
+dir = nil
+
+case ARGV.length
+when 1
+  dir = ARGV[0]
+when 2
+  override = true
+  dir = ARGV[0]
+else
+  puts 'more arguments please'
+  exit
+end
+
+puts "dir is #{dir}"
+puts "override is #{override}\n\r"
+
+def fetch(uri_str, limit = 10)
+  # You should choose better exception.
+  fail ArgumentError, 'HTTP redirect too deep' if limit == 0
+
+  url = URI.parse(uri_str)
+  req = Net::HTTP::Get.new(url.path)
+  response = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
+  case response
+  when Net::HTTPSuccess     then response
+  when Net::HTTPRedirection then fetch(response['location'], limit - 1)
+  else
+    response.error!
+  end
+end
+
+def get_lyrics(artist, song)
+  artist.gsub!(' ', '%20')
+  song.gsub!(' ', '%20')
+
+  res = fetch("http://lyrics.wikia.com/#{artist}:#{song}")
+
+  xml_doc = Nokogiri::HTML(res.body)
+  lyrics = xml_doc.xpath('//div[@class="lyricbox"]')
+
+  lyrics.search('//script').remove
+  lyrics.search('.//comment()').remove
+
+  lyrics.inner_html.gsub!('<br>', "\r").gsub!(/<\/?[^>]+>/, '').gsub!("\n", '')
+end
+
+def set_lyrics(file, lyrics)
+  Mp3Info.open(file) do |mp3|
+    mp3.tag2.USLT = lyrics
+  end
+end
+
+files = Dir.glob("#{dir}/**/*")
+files.each do |file|
+  filename = File.extname(file)
+  next unless filename == '.mp3'
+  Mp3Info.open(file) do |mp3|
+    artist = mp3.tag.artist
+    title = mp3.tag.title
+    if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT'))
+      lyrics = get_lyrics(artist, title)
+      set_lyrics(file, lyrics)
+    elsif mp3.hastag2? && override && mp3.tag2.key?('USLT')
+      lyrics = get_lyrics(artist, title)
+      set_lyrics(file, lyrics)
+    end
+  end
+end
