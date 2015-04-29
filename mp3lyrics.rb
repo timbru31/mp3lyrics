@@ -51,13 +51,12 @@ def get_lyrics(artist, song)
 
   res = fetch("http://lyrics.wikia.com/#{artist}:#{song}")
 
-  xml_doc = Nokogiri::HTML(res.body)
-  lyrics = xml_doc.xpath('//div[@class="lyricbox"]')
+  lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyricbox"]')
 
   lyrics.search('//script').remove
   lyrics.search('.//comment()').remove
 
-  lyrics.inner_html.gsub!('<br>', "\r").gsub!(/<\/?[^>]+>/, '').gsub!("\n", '')
+  lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').gsub!("\n", '')
 end
 
 def set_lyrics(file, lyrics)
