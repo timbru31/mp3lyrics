@@ -13,12 +13,22 @@ when 2
   override = true
   dir = ARGV[0]
 else
-  puts 'Usage: ./mp3lyrics <dir> [override]'
+  puts 'Usage: ./mp3lyrics.rb <dir> [override]'
   exit
 end
 
-puts "dir is #{dir}"
-puts "override is #{override}\n"
+puts "
+Welcome to
+  __  __ _____ ____  _                _
+ |  \\\/  |  __ \\___ \\| |              (_)
+ | \\  \/ | |__) |__) | |    _   _ _ __ _  ___ ___
+ | |\\/| |  ___\/|__ <| |   | | | | \'__| |\/ __\/ __|
+ | |  | | |    ___) | |___| |_| | |  | | (__\\__ \\
+ |_|  |_|_|   |____\/|______\\__, |_|  |_|\\___|___\/
+                            __\/ |
+                           |___\/
+dir is #{dir}
+override is #{override}\n"
 
 def fetch(uri_str, limit = 10)
   # You should choose better exception.
