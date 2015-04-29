@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'mp3info'
 require 'net/http'
 require 'nokogiri'
@@ -12,12 +13,12 @@ when 2
   override = true
   dir = ARGV[0]
 else
-  puts 'more arguments please'
+  puts 'Usage: ./mp3lyrics <dir> [override]'
   exit
 end
 
 puts "dir is #{dir}"
-puts "override is #{override}\n\r"
+puts "override is #{override}\n"
 
 def fetch(uri_str, limit = 10)
   # You should choose better exception.
