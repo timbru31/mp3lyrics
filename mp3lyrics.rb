@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 require 'mp3info'
-require 'net/http'
-require 'nokogiri'
+
+require './util/mp3lyrics_util'
+require './wiki_api/lyricwikia'
+require './wiki_api/azlyrics'
+require './wiki_api/metrolyrics'
 
 override = false
 dir = nil
@@ -18,7 +21,7 @@ else
 end
 
 puts "
-Welcome to
+                  Welcome to
   __  __ _____ ____  _                _
  |  \\\/  |  __ \\___ \\| |              (_)
  | \\  \/ | |__) |__) | |    _   _ _ __ _  ___ ___
@@ -27,43 +30,9 @@ Welcome to
  |_|  |_|_|   |____\/|______\\__, |_|  |_|\\___|___\/
                             __\/ |
                            |___\/
-dir is #{dir}
-override is #{override}\n"
 
-def fetch(uri_str, limit = 10)
-  # You should choose better exception.
-  fail ArgumentError, 'HTTP redirect too deep' if limit == 0
-
-  url = URI.parse(uri_str)
-  req = Net::HTTP::Get.new(url.path)
-  response = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
-  case response
-  when Net::HTTPSuccess     then response
-  when Net::HTTPRedirection then fetch(response['location'], limit - 1)
-  else
-    response.error!
-  end
-end
-
-def get_lyrics(artist, song)
-  artist.gsub!(' ', '%20')
-  song.gsub!(' ', '%20')
-
-  res = fetch("http://lyrics.wikia.com/#{artist}:#{song}")
-
-  lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyricbox"]')
-
-  lyrics.search('//script').remove
-  lyrics.search('.//comment()').remove
-
-  lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').gsub!("\n", '')
-end
-
-def set_lyrics(file, lyrics)
-  Mp3Info.open(file) do |mp3|
-    mp3.tag2.USLT = lyrics
-  end
-end
+The current working directory is #{dir}
+Overriding existing lyrics is #{override}\n\r"
 
 files = Dir.glob("#{dir}/**/*")
 files.each do |file|
@@ -72,12 +41,17 @@ files.each do |file|
   Mp3Info.open(file) do |mp3|
     artist = mp3.tag.artist
     title = mp3.tag.title
-    if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT'))
-      lyrics = get_lyrics(artist, title)
-      set_lyrics(file, lyrics)
-    elsif mp3.hastag2? && override && mp3.tag2.key?('USLT')
-      lyrics = get_lyrics(artist, title)
-      set_lyrics(file, lyrics)
+    puts "Fetching lyrics for #{artist} - #{title}"
+    if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || (mp3.hastag2? && override && mp3.tag2.key?('USLT'))
+      lyrics = LyricWikia.get_lyrics(artist, title)
+      lyrics = MetroLyrics.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = AZLyrics.get_lyrics(artist, title) if lyrics.nil?
+      if lyrics.nil?
+        puts "Did not find any lyrics"
+      else
+        puts "Lyrics found"
+        set_lyrics(file, lyrics)
+      end
     end
   end
 end
