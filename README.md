@@ -46,5 +46,5 @@ Where **dir** is the folder with your music, it's iterated recursively and **ove
 
 ## Future plans // ToDo
 
-- Add support to other lyrics sites when 404 is returned from LyricWikia
+- ~~Add support to other lyrics sites when 404 is returned from LyricWikia~~
 - GUI for easier usage (maybe)
