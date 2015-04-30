@@ -4,7 +4,7 @@
 
 ## Info
 
-MP3Lyrics is a tool written in ruby (currently only CLI) to download songs lyrics from [LyricWikia](http://lyrics.wikia.com) and to add them to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) tag](http://id3.org/id3v2.4.0-frames).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com) and [SwiftLyrics](http://swiftlyrics.com) and to add them to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) ](http://id3.org/id3v2.4.0-frames) tag.
 
 ## Motivation
 
@@ -20,6 +20,10 @@ Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricW
 
 Simply because the charge me (the developer) for retrieving the lyrics.
 
+#### Why are you not using MetroLyrics API?
+
+I don't have an API key (yet).
+
 #### Why not iTunes Lyrics Adder, Lyrics for iTunes, iSongText, Get Lyrical, ...?
 
 Either they were tied to iTunes and ugly DLL libraries, outdated/inactive, closed source or not cross platform. I'm mainly developing on my MacBook and my iTunes library is on my Windows system. I need something that works anywhere.
@@ -28,8 +32,10 @@ By dropping the need (and support) of iTunes running somewhere in the background
 
 ## Dependencies
 
-1. Nokogiri for HTML parsing
-2. mp3info as a MP3 library
+1. Bundler
+2. Nokogiri for HTML parsing
+3. mp3info as a MP3 library
+4. require_all for easier requiring of the wiki_api folder
 
 ## Usage
 

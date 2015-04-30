@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 require 'mp3info'
+require 'require_all'
 
 require './util/mp3lyrics_util'
-require './wiki_api/lyricwikia'
-require './wiki_api/azlyrics'
-require './wiki_api/metrolyrics'
+require_all './wiki_api/'
 
 override = false
 dir = nil
@@ -46,6 +45,7 @@ files.each do |file|
       lyrics = LyricWikia.get_lyrics(artist, title)
       lyrics = MetroLyrics.get_lyrics(artist, title) if lyrics.nil?
       lyrics = AZLyrics.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = SwiftLyrics.get_lyrics(artist, title) if lyrics.nil?
       if lyrics.nil?
         puts "Did not find any lyrics"
       else
