@@ -1,9 +1,5 @@
-require './util/mp3lyrics_util'
-require 'nokogiri'
-require 'pry'
-
-class SwiftLyrics
-  def self.get_lyrics(artist, song)
+class SwiftLyrics < Wiki
+  def get_lyrics(artist, song)
     artist.gsub!(' ', '-')
     song.gsub!(' ', '-')
 

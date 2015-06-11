@@ -1,8 +1,5 @@
-require './util/mp3lyrics_util'
-require 'nokogiri'
-
-class LyricWikia
-  def self.get_lyrics(artist, song)
+class LyricWikia < Wiki
+  def get_lyrics(artist, song)
     artist.gsub!(' ', '%20')
     song.gsub!(' ', '%20')
 

@@ -1,8 +1,5 @@
-require './util/mp3lyrics_util'
-require 'nokogiri'
-
-class MetroLyrics
-  def self.get_lyrics(artist, song)
+class MetroLyrics < Wiki
+  def get_lyrics(artist, song)
     artist.gsub!(' ', '-')
     song.gsub!(' ', '-')
 

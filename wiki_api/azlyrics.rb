@@ -1,8 +1,5 @@
-require './util/mp3lyrics_util'
-require 'nokogiri'
-
-class AZLyrics
-  def self.get_lyrics(artist, song)
+class AZLyrics < Wiki
+  def get_lyrics(artist, song)
     artist.gsub!(' ', '')
     song.gsub!(' ', '')
 

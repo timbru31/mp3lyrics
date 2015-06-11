@@ -2,7 +2,6 @@
 require 'mp3info'
 require 'require_all'
 
-require './util/mp3lyrics_util'
 require_all './wiki_api/'
 
 override = false
@@ -33,6 +32,7 @@ puts "
 The current working directory is #{dir}
 Overriding existing lyrics is #{override}\n\r"
 
+wiki = Wiki.new
 files = Dir.glob("#{dir}/**/*")
 files.each do |file|
   filename = File.extname(file)
@@ -42,15 +42,15 @@ files.each do |file|
     title = mp3.tag.title
     puts "Fetching lyrics for #{artist} - #{title}"
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || (mp3.hastag2? && override && mp3.tag2.key?('USLT'))
-      lyrics = LyricWikia.get_lyrics(artist, title)
-      lyrics = MetroLyrics.get_lyrics(artist, title) if lyrics.nil?
-      lyrics = AZLyrics.get_lyrics(artist, title) if lyrics.nil?
-      lyrics = SwiftLyrics.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = LyricWikia.new.get_lyrics(artist, title)
+      lyrics = MetroLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = SwiftLyrics.new.get_lyrics(artist, title) if lyrics.nil?
       if lyrics.nil?
         puts "Did not find any lyrics\n\r"
       else
         puts "Lyrics found\n\r"
-        set_lyrics(file, lyrics)
+        wiki.set_lyrics(file, lyrics)
       end
     end
   end
