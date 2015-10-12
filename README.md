@@ -1,6 +1,6 @@
 # MP3Lyrics
 
-[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
+[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics) [![Code Climate](https://codeclimate.com/github/timbru31/mp3lyrics/badges/gpa.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 
 ### Still in Alpha, ugly and WIP :)
 
