@@ -1,5 +1,7 @@
 # MP3Lyrics
 
+[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
+
 ### Still in Alpha, ugly and WIP :)
 
 ## Info
