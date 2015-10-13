@@ -1,12 +1,15 @@
+# Fetches the lyrics from SwiftLyrics
+# Lyrics are stored accessed via the URL schema http://swiftlyrics.com/lyrics/ARTIST-SONG.html
+# They are inside //div[@class="left_box_lyrics"]//p, p tags in the div with the class "left_box_lyrics"
 class SwiftLyrics < Wiki
   def get_lyrics(artist, song)
-    artist.tr!(' ', '-').downcase!
-    song.tr!(' ', '-').downcase!
+    artist.tr!(' ', '-')
+    song.tr!(' ', '-')
 
-    res = fetch("http://swiftlyrics.com/lyrics/#{artist}-#{song}.html")
+    res = fetch("http://swiftlyrics.com/lyrics/#{artist.downcase}-#{song.downcase}.html")
     return nil unless res.is_a? Net::HTTPSuccess
 
-    lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="left_box_lyrics"]//p[1]')
+    lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="left_box_lyrics"]//p')
 
     lyrics.inner_html.gsub!('<br>', "\r").delete!("\n")
   end
