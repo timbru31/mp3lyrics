@@ -11,6 +11,6 @@ class LyricWikia < Wiki
     lyrics.search('//script').remove
     lyrics.search('.//comment()').remove
 
-    lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').gsub!("\n", '')
+    lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\n")
   end
 end
