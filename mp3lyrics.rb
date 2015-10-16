@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'mp3info'
 require 'require_all'
-require 'pry'
 
 require_all './wiki_api/'
 

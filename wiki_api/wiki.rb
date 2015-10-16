@@ -1,4 +1,3 @@
-require 'mp3info'
 require 'net/http'
 require 'nokogiri'
 
