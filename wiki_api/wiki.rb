@@ -1,7 +1,6 @@
 require 'mp3info'
 require 'net/http'
 require 'nokogiri'
-require 'pry'
 
 # Base class to fetch different lyrics sites
 class Wiki
