@@ -6,7 +6,7 @@
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com) and [SwiftLyrics](http://swiftlyrics.com) and to add them to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) ](http://id3.org/id3v2.4.0-frames) tag.
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com), [SwiftLyrics](http://swiftlyrics.com) and [Genius](http://genius.com) and to add them to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) ](http://id3.org/id3v2.4.0-frames) tag.
 
 ## Motivation
 
@@ -25,6 +25,10 @@ Simply because the charge me (the developer) for retrieving the lyrics.
 #### Why are you not using MetroLyrics API?
 
 I don't have an API key (yet).
+
+#### Why are you not using Genius API?
+
+They do not offer fetching lyrics via the API (yet).
 
 #### Why not iTunes Lyrics Adder, Lyrics for iTunes, iSongText, Get Lyrical, ...?
 

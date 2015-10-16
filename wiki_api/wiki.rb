@@ -1,6 +1,7 @@
 require 'mp3info'
 require 'net/http'
 require 'nokogiri'
+require 'pry'
 
 # Base class to fetch different lyrics sites
 class Wiki
@@ -19,9 +20,7 @@ class Wiki
     end
   end
 
-  def set_lyrics(file, lyrics)
-    Mp3Info.open(file) do |mp3|
-      mp3.tag2.USLT = lyrics
-    end
+  def set_lyrics(mp3, lyrics)
+    mp3.tag2.USLT = lyrics
   end
 end
