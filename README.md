@@ -1,12 +1,14 @@
 # MP3Lyrics
 
-[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics) [![Code Climate](https://codeclimate.com/github/timbru31/mp3lyrics/badges/gpa.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
+[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
+[![Code Climate](https://codeclimate.com/github/timbru31/mp3lyrics/badges/gpa.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 
 ### Still in Alpha, ugly and WIP :)
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com), [SwiftLyrics](http://swiftlyrics.com) and [Genius](http://genius.com) and to add them to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) ](http://id3.org/id3v2.4.0-frames) tag.
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com), [SwiftLyrics](http://swiftlyrics.com) and [Genius](http://genius.com).
+The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription) ](http://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
 
@@ -54,3 +56,4 @@ Where **dir** is the folder with your music, it's iterated recursively and **ove
 
 - ~~Add support to other lyrics sites when 404 is returned from LyricWikia~~
 - GUI for easier usage (maybe)
+- Add test cases, see #1
