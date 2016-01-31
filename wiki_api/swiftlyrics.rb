@@ -7,10 +7,15 @@ class SwiftLyrics < Wiki
     song.tr!(' ', '-')
 
     res = fetch("http://swiftlyrics.com/lyrics/#{artist.downcase}-#{song.downcase}.html")
-    return nil unless res.is_a? Net::HTTPSuccess
 
+    return nil unless res.is_a? Net::HTTPSuccess
+    return nil unless lyrics_available?(res.body)
     lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="left_box_lyrics"]//p')
 
     lyrics.inner_html.gsub!('<br>', "\r").delete!("\n")
+  end
+
+  def lyrics_available?(body)
+    return Nokogiri::HTML(body).xpath('//div[@class="left_box"]//center').empty?
   end
 end

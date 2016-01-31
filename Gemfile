@@ -7,4 +7,9 @@ gem 'ruby-mp3info', '>=0.8.8'
 
 group :test do
   gem 'rake', '>=10.5.0'
+  gem 'rspec', '>=3.4.0'
+end
+
+group :development do
+  gem 'pry-byebug', '>=3.3.0'
 end
