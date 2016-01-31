@@ -1,5 +1,6 @@
-require './wiki_api/Wiki.rb'
-require './wiki_api/Genius.rb'
+require 'minitest/autorun'
+require './wiki_api/Wiki'
+require './wiki_api/Genius'
 
 numb_lyrics = "[Verse 1]\rI'm tired of being what you want me to be\rFeeling so faithless, lost under the surface\rDon't know what you're expecting of me\r"\
   "Put under the pressure of walking in your shoes\r(Caught in the undertow, just caught in the undertow)\rEvery step that I take is another mistake to you\r"\
@@ -13,19 +14,22 @@ numb_lyrics = "[Verse 1]\rI'm tired of being what you want me to be\rFeeling so 
   "Is be more like me and be less like you\r\r[Hook]\rI've become so numb, I can't feel you there\r(I'm tired of being what you want me to be)\r"\
   "I've become so numb, I can't feel you there\r(I'm tired of being what you want me to be)"
 
-RSpec.describe Genius, 'Lyrics fetching' do
-  context 'with the song Linkin Park - Numb' do
+describe Genius, 'Lyrics fetching' do
+  before do
+    @wiki = Genius.new
+  end
+
+  describe 'with the song Linkin Park - Numb' do
     it 'fetches the right lyrics from Genius' do
-      wiki = Genius.new
-      lyrics = wiki.get_lyrics('Linkin Park', 'Numb')
-      expect(lyrics).to eq numb_lyrics
+      lyrics = @wiki.get_lyrics('Linkin Park', 'Numb')
+      lyrics.must_equal numb_lyrics
     end
   end
-  context 'with the song Non Existing - No Song' do
+
+  describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      wiki = Genius.new
-      lyrics = wiki.get_lyrics('Non Existing', 'No Song')
-      expect(lyrics).to eq nil
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics.must_equal nil
     end
   end
 end

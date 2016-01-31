@@ -1,8 +1,7 @@
-require 'rspec/core/rake_task'
+require 'rake/testtask'
 
 task default: %w[test]
 
-task :test do
-  RSpec::Core::RakeTask.new(:spec)
-  Rake::Task["spec"].execute
+Rake::TestTask.new do |t|
+  t.pattern = "spec/*_spec.rb"
 end

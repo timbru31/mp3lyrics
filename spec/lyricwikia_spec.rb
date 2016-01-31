@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 require './wiki_api/Wiki'
 require './wiki_api/LyricWikia'
 
@@ -21,19 +22,22 @@ enter_shikari_lyrics = "Now I don't know about you but I don't think the primary
   "Oh and the jigsaw starts to build.\r\rPiece by PIIEECCEE!\r\rOPEN THEIR MINDS.\r\rTransmit emergency frequencies!\r\rOPEN THEIR MINDS.\r\r"\
   "Transmit emergency frequencies!\r\rEmergency frequencies.\rEmergency frequencies.\rEmergency frequencies.\rEmergency frequencies."
 
-RSpec.describe LyricWikia, 'Lyrics fetching' do
-  context 'with the song Enter Shikari - Gandhi Mate, Gandhi' do
+describe LyricWikia, 'Lyrics fetching' do
+  before do
+    @wiki = LyricWikia.new
+  end
+
+  describe 'with the song Enter Shikari - Gandhi Mate, Gandhi' do
     it 'fetches the right lyrics from LyricWikia' do
-      wiki = LyricWikia.new
-      lyrics = wiki.get_lyrics('Enter Shikari', 'Gandhi Mate, Gandhi')
-      expect(lyrics).to eq enter_shikari_lyrics
+      lyrics = @wiki.get_lyrics('Enter Shikari', 'Gandhi Mate, Gandhi')
+      lyrics.must_equal enter_shikari_lyrics
     end
   end
-  context 'with the song Non Existing - No Song' do
+
+  describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      wiki = LyricWikia.new
-      lyrics = wiki.get_lyrics('Non Existing', 'No Song')
-      expect(lyrics).to eq nil
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics.must_equal nil
     end
   end
 end

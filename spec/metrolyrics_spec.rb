@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 require './wiki_api/Wiki'
 require './wiki_api/MetroLyrics'
 
@@ -8,19 +9,22 @@ breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but li
   "Open your wings, evil angel\rFly over me, evil angel\rWhy can't I breathe, evil angel?Put me to sleep, evil angel\rOpen your wings, evil angel\r"\
   "Fly over me, evil angel\rWhy can't I breathe, evil angel?\t"
 
-RSpec.describe MetroLyrics, 'Lyrics fetching' do
-  context 'with the song Breaking Benjamin - Evil Angel' do
+describe MetroLyrics, 'Lyrics fetching' do
+  before do
+    @wiki = MetroLyrics.new
+  end
+
+  describe 'with the song Breaking Benjamin - Evil Angel' do
     it 'fetches the right lyrics from MetroLyrics' do
-      wiki = MetroLyrics.new
-      lyrics = wiki.get_lyrics('Breaking Benjamin', 'Evil Angel')
-      expect(lyrics).to eq breaking_benjamin_lyrics
+      lyrics = @wiki.get_lyrics('Breaking Benjamin', 'Evil Angel')
+      lyrics.must_equal breaking_benjamin_lyrics
     end
   end
-  context 'with the song Non Existing - No Song' do
+
+  describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      wiki = MetroLyrics.new
-      lyrics = wiki.get_lyrics('Non Existing', 'No Song')
-      expect(lyrics).to eq nil
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics.must_equal nil
     end
   end
 end

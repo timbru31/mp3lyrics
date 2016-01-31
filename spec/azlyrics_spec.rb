@@ -1,5 +1,6 @@
-require './wiki_api/Wiki.rb'
-require './wiki_api/AZLyrics.rb'
+require 'minitest/autorun'
+require './wiki_api/Wiki'
+require './wiki_api/AZLyrics'
 
 rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what would you say if I said that you could?\r\r"\
   "Just carry this gun and you'll even get paid.\"\r\rI said \"That sounds pretty good.\"\r\r\r\rBlack leather boots\r\rSpit-shined so bright\r\r"\
@@ -16,19 +17,22 @@ rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what wou
   "So damn proud of me\r\rAnd I brought home that flag\r\rNow it gathers dust\r\rBut it's a flag that I love\r\rIt's the only flag I trust\r\r\r\r"\
   "He said, \"Son, have you seen the world? \r\rWell what would you say, if I said that you could?\""
 
-RSpec.describe AZLyrics, 'Lyrics fetching' do
-  context 'with the song Rise Against - Hero of War' do
+describe AZLyrics, 'Lyrics fetching' do
+  before do
+    @wiki = AZLyrics.new
+  end
+
+  describe 'with the song Rise Against - Hero of War' do
     it 'fetches the right lyrics from AZLyrics' do
-      wiki = AZLyrics.new
-      lyrics = wiki.get_lyrics('Rise Against', 'Hero of War')
-      expect(lyrics).to eq rise_against_lyrics
+      lyrics = @wiki.get_lyrics('Rise Against', 'Hero of War')
+      lyrics.must_equal rise_against_lyrics
     end
   end
-  context 'with the song Non Existing - No Song' do
+
+  describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      wiki = AZLyrics.new
-      lyrics = wiki.get_lyrics('Non Existing', 'No Song')
-      expect(lyrics).to eq nil
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics.must_equal nil
     end
   end
 end

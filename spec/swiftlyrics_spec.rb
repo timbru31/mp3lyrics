@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 require './wiki_api/Wiki'
 require './wiki_api/SwiftLyrics'
 
@@ -12,19 +13,22 @@ ffdp_lyrics = "No one gets left behind, another fallen soul\rNo one gets left be
   "Whatever happened to no one gets left behind?No one gets left behind\rNo one gets left behind\rNo one gets left behind\r"\
   "No one gets left behind\rNo one gets left behind"
 
-RSpec.describe SwiftLyrics, 'Lyrics fetching' do
-  context 'with the song Five Finger Death Punch - No One Gets Left Behind' do
+describe SwiftLyrics, 'Lyrics fetching' do
+  before do
+    @wiki = SwiftLyrics.new
+  end
+
+  describe 'with the song Five Finger Death Punch - No One Gets Left Behind' do
     it 'fetches the right lyrics from SwiftLyrics' do
-      wiki = SwiftLyrics.new
-      lyrics = wiki.get_lyrics('Five Finger Death Punch', 'No One Gets Left Behind')
-      expect(lyrics).to eq ffdp_lyrics
+      lyrics = @wiki.get_lyrics('Five Finger Death Punch', 'No One Gets Left Behind')
+      lyrics.must_equal ffdp_lyrics
     end
   end
-  context 'with the song Non Existing - No Song' do
+
+  describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      wiki = SwiftLyrics.new
-      lyrics = wiki.get_lyrics('Non Existing', 'No Song')
-      expect(lyrics).to eq nil
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics.must_equal nil
     end
   end
 end
