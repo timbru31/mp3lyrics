@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require './wiki_api/Wiki'
-require './wiki_api/MetroLyrics'
+require 'Wiki'
+require 'MetroLyrics'
 
 breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked wings\rI have the answer spreading the cancer\r"\
   "You are the faith inside meNo, don't leave me to die here\rHelp me survive here alone\rNo, don't remember, rememberPut me to sleep, evil angel\r"\

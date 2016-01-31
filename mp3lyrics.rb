@@ -2,7 +2,7 @@
 require 'mp3info'
 require 'require_all'
 
-require_all './wiki_api/'
+require_all './lib/'
 
 override = false
 dir = nil

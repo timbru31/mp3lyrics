@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require './wiki_api/Wiki'
-require './wiki_api/Genius'
+require 'Wiki'
+require 'Genius'
 
 numb_lyrics = "[Verse 1]\rI'm tired of being what you want me to be\rFeeling so faithless, lost under the surface\rDon't know what you're expecting of me\r"\
   "Put under the pressure of walking in your shoes\r(Caught in the undertow, just caught in the undertow)\rEvery step that I take is another mistake to you\r"\

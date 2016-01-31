@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require './wiki_api/Wiki'
-require './wiki_api/LyricWikia'
+require 'Wiki'
+require 'LyricWikia'
 
 enter_shikari_lyrics = "Now I don't know about you but I don't think the primary purpose of your life, of my life, of the entirety of the human "\
   "race is just to blindly consume to support a failing economy and a faulty system, forever and ever until we run out of every resource and have to "\
