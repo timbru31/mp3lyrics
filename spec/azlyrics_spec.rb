@@ -1,5 +1,5 @@
-require './wiki_api/Wiki'
-require './wiki_api/AZLyrics'
+require './wiki_api/Wiki.rb'
+require './wiki_api/AZLyrics.rb'
 
 rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what would you say if I said that you could?\r\r"\
   "Just carry this gun and you'll even get paid.\"\r\rI said \"That sounds pretty good.\"\r\r\r\rBlack leather boots\r\rSpit-shined so bright\r\r"\
