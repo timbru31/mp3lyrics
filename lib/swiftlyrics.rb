@@ -1,7 +1,7 @@
 # Fetches the lyrics from SwiftLyrics
 # Lyrics are stored accessed via the URL schema http://swiftlyrics.com/lyrics/ARTIST-SONG.html
 # They are inside //div[@class="left_box_lyrics"]//p, p tags in the div with the class "left_box_lyrics"
-require 'Wiki'
+require_relative './wiki'
 
 class SwiftLyrics < Wiki
   def get_lyrics(artist, song)

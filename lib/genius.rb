@@ -2,7 +2,7 @@
 # Lyrics are stored accessed via the URL schema http://genius.com/ARTIST-SONG-lyrics
 # They are inside //lyircs[@class="lyrics"]//p[1], a lyircs (pseudo element, it seems form Angular.js) with the class "lyrics"
 # Inside the p in the lyrics div the are in a tags
-require 'Wiki'
+require_relative './wiki'
 
 class Genius < Wiki
   def get_lyrics(artist, song)
