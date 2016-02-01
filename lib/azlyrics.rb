@@ -13,8 +13,11 @@ class AZLyrics < Wiki
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('/html/body/div[3]/div/div[2]/div[6]')
-    lyrics.search('.//comment()').remove
+    prettify_lyrics(lyrics)
+  end
 
+  def prettify_lyrics(lyrics)
+    lyrics.search('.//comment()').remove
     lyrics.inner_html.gsub!('<br>', "\r").delete!("\n").sub!("\r\r", '')
   end
 end

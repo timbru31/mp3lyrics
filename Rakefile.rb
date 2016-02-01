@@ -1,7 +1,8 @@
+require 'rake'
 require 'rake/testtask'
 
-task default: %w[test]
-
 Rake::TestTask.new do |t|
-  t.pattern = "spec/*_spec.rb"
+  t.test_files = Dir.glob('spec/**/*_spec.rb')
 end
+
+task(default: :test)

@@ -13,10 +13,12 @@ class LyricWikia < Wiki
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyricbox"]')
+    prettify_lyrics(lyrics)
+  end
 
+  def prettify_lyrics(lyrics)
     lyrics.search('//script').remove
     lyrics.search('.//comment()').remove
-
     lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\n")
   end
 end

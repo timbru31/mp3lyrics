@@ -2,7 +2,8 @@ require_relative './wiki'
 
 # Fetches the lyrics from Genius (formerly known as Rap Genius)
 # Lyrics are stored accessed via the URL schema http://genius.com/ARTIST-SONG-lyrics
-# They are inside //lyircs[@class="lyrics"]//p[1], a lyircs (pseudo element, it seems form Angular.js) with the class "lyrics"
+# They are inside //lyircs[@class="lyrics"]//p[1], a lyrics element with the class "lyrics"
+# It seems that this element was added by Anglar.js
 # Inside the p in the lyrics div the are in a tags
 class Genius < Wiki
   def get_lyrics(artist, song)

@@ -1,12 +1,15 @@
 require 'minitest/autorun'
 require_relative '../lib/metrolyrics'
 
-breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked wings\rI have the answer spreading the cancer\r"\
-  "You are the faith inside meNo, don't leave me to die here\rHelp me survive here alone\rNo, don't remember, rememberPut me to sleep, evil angel\r"\
-  "Open your wings, evil angelI'm a believer, nothing could be worse\rAll these imaginary friends\rHiding betrayal, driving the nail\r"\
-  "Hoping to find a saviorNo, don't leave me to die here\rHelp me survive here alone\rDon't surrender, surrenderPut me to sleep, evil angel\r"\
-  "Open your wings, evil angel\rFly over me, evil angel\rWhy can't I breathe, evil angel?Put me to sleep, evil angel\rOpen your wings, evil angel\r"\
-  "Fly over me, evil angel\rWhy can't I breathe, evil angel?\t"
+breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked "\
+  "wings\rI have the answer spreading the cancer\rYou are the faith inside meNo, don't leave me "\
+  "to die here\rHelp me survive here alone\rNo, don't remember, rememberPut me to sleep, evil "\
+  "angel\rOpen your wings, evil angelI'm a believer, nothing could be worse\rAll these imaginary "\
+  "friends\rHiding betrayal, driving the nail\rHoping to find a saviorNo, don't leave me to die "\
+  "here\rHelp me survive here alone\rDon't surrender, surrenderPut me to sleep, evil angel\r"\
+  "Open your wings, evil angel\rFly over me, evil angel\rWhy can't I breathe, evil angel?Put me "\
+  "to sleep, evil angel\rOpen your wings, evil angel\rFly over me, evil angel\rWhy can't I "\
+  "breathe, evil angel?\t"
 
 describe MetroLyrics, 'Lyrics fetching' do
   before do
