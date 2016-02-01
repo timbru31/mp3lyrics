@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'Wiki'
 require 'AZLyrics'
 
 rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what would you say if I said that you could?\r\r"\

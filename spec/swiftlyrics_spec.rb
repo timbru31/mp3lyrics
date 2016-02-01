@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'Wiki'
 require 'SwiftLyrics'
 
 ffdp_lyrics = "No one gets left behind, another fallen soul\rNo one gets left behind, another broken home\r"\

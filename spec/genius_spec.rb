@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'Wiki'
 require 'Genius'
 
 numb_lyrics = "[Verse 1]\rI'm tired of being what you want me to be\rFeeling so faithless, lost under the surface\rDon't know what you're expecting of me\r"\

@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'Wiki'
 require 'LyricWikia'
 
 enter_shikari_lyrics = "Now I don't know about you but I don't think the primary purpose of your life, of my life, of the entirety of the human "\

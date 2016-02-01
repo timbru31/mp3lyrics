@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'Wiki'
 require 'MetroLyrics'
 
 breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked wings\rI have the answer spreading the cancer\r"\
