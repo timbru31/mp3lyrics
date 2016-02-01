@@ -1,9 +1,9 @@
+require_relative './wiki'
+
 # Fetches the lyrics from AZLyrics.com
 # Lyrics are stored accessed via the URL schema http://www.azlyrics.com/lyrics/ARTIST/SONG.html
 # They are inside /html/body/div[3]/div/div[2]/div[6], sadly no class to access.
 # There are hidden comments, which need to be removed.
-require_relative './wiki'
-
 class AZLyrics < Wiki
   def get_lyrics(artist, song)
     artist.delete!(' ')

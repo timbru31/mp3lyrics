@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../lib/SwiftLyrics'
+require_relative '../lib/swiftlyrics'
 
 ffdp_lyrics = "No one gets left behind, another fallen soul\rNo one gets left behind, another broken home\r"\
   "No one gets left behind, we stand and fight together\rNo one gets left behind but we all die alonePoliticians bathing in their greed\r"\
