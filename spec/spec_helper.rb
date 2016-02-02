@@ -2,5 +2,11 @@ require 'codeclimate-test-reporter'
 require 'coveralls'
 require 'minitest/autorun'
 
-CodeClimate::TestReporter.start
-Coveralls.wear!
+# Coveralls.wear!
+# CodeClimate::TestReporter.start
+
+SimpleCov.formatters = [
+  Coveralls::SimpleCov::Formatter,
+  CodeClimate::TestReporter::Formatter
+]
+SimpleCov.start
