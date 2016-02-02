@@ -3,6 +3,7 @@
 [![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
 [![Code Climate](https://codeclimate.com/github/timbru31/mp3lyrics/badges/gpa.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Build Status](https://travis-ci.org/timbru31/mp3lyrics.svg?branch=master)](https://travis-ci.org/timbru31/mp3lyrics)
+[![Test Coverage](https://codeclimate.com/github/timbru31/mp3lyrics/badges/coverage.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
 
 ### Still in Alpha, ugly and WIP :)
 

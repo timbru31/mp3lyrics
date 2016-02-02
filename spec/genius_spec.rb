@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative './spec_helper'
 require_relative '../lib/genius'
 
 numb_lyrics = "[Verse 1]\rI'm tired of being what you want me to be\rFeeling so faithless, lost "\

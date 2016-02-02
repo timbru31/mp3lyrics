@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative './spec_helper'
 require_relative '../lib/azlyrics'
 
 rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what would you say if I "\

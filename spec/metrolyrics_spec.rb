@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative './spec_helper'
 require_relative '../lib/metrolyrics'
 
 breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked "\

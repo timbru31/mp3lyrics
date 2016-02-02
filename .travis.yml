@@ -1,9 +1,13 @@
 language: ruby
 rvm:
-  - 2.0.0-p648
-  - 2.1.8
-  - 2.2.4
-  - 2.3.0
+- 2.0.0-p648
+- 2.1.8
+- 2.2.4
+- 2.3.0
 sudo: required
 dist: trusty
 before_install: gem install bundler
+addons:
+  code_climate:
+    repo_token:
+      secure: "eRrTGj3m1fj0JysfER178RbHqD5loNwg4cK8xhf9LEG49EKipA8fgAHqKVHRXH8p/zpEplC5FYAmWzy8n5aG95/sy89fjkqrMMyhFoYcyaDsTq44IPivROLR8UuSCi1SCilFrLxFA645NOrOwOy0jrkBgvPWPfnaC4hiQ+Tc2IY/utnh8NK+rJL+nzJQ5ZmbDy9/1gwWnTxhucMuLyQ5/ofoRccbFbrP3iToywtMyRlQX6va/MyX6R/Tnd28F7bdjE9dfNiqOIdJr4LBHLK42tAbN/khRGLg/OT6dciJLSV6IO9iERPuK/fJq4I0y3HfKdJmEYt6jxna8i/T/e9bIoTVniK+e3Gv0fu49AjUMm7BpMPgNvCjNyYj65S3cw4sBOF7pOLB2EseLG5oaX24mEC7YwTisDm4bm0Te7iRBDfhy78/83Jnd42eg/v68dB9KVmT0FR6fUvfZ0D5Bk9UVRl/uICEAUzngkKoa8oENdl9qA80oMH9QzUdL40HbI/FkPK9WKSnImQC1NswTqsIwI/iytqzZP11uSSv8wjFIMTUAe+jpse7Owx4Nou/LCbO891i+kNLeTQqxVbhBbuIpsVemIsrHLutJuJANzfoBXe09FumOHh5JCYIojxJdZvvNKcbMtbwawZk+S3oKIWYDcVq9kukWeqhp2W5ru7ecZU="

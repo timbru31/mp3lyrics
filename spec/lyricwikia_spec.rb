@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative './spec_helper'
 require_relative '../lib/lyricwikia'
 
 enter_shikari_lyrics = "Now I don't know about you but I don't think the primary purpose of your "\
