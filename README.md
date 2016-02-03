@@ -47,16 +47,32 @@ By dropping the need (and support) of iTunes running somewhere in the background
 2. Nokogiri for HTML parsing
 3. mp3info as a MP3 library
 4. require_all for easier requiring of the wiki_api folder
+5. For testing purposes you should install rubocop, rake, minitest and optionally coverage reporters for CodeClimate and Coveralls
+
+## Installation
+
+
+````shell
+gem install bundler
+bundle install
+````
 
 ## Usage
 
-````
+````shell
 ./mp3lyrics.rb <dir> [override]
 ````
 Where **dir** is the folder with your music, it's iterated recursively and **override** is a boolean toggle to override existing lyrics (defaults to *false*)
+
+## Tests
+
+To execute the tests run
+````shell
+bundle exec rake
+````
 
 ## Future plans // ToDo
 
 - ~~Add support to other lyrics sites when 404 is returned from LyricWikia~~
 - GUI for easier usage (maybe)
-- Add test cases, see #1
+- Add test cases, see [#1](https://github.com/timbru31/mp3lyrics/issues/1)
