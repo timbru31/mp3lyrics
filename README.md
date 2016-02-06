@@ -1,11 +1,12 @@
 # MP3Lyrics
 
-[![Dependency Status](https://gemnasium.com/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
-[![Code Climate](https://codeclimate.com/github/timbru31/mp3lyrics/badges/gpa.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
-[![Build Status](https://travis-ci.org/timbru31/mp3lyrics.svg?branch=master)](https://travis-ci.org/timbru31/mp3lyrics)
-[![Circle CI](https://circleci.com/gh/timbru31/mp3lyrics.svg?style=svg)](https://circleci.com/gh/timbru31/mp3lyrics)
-[![Test Coverage](https://codeclimate.com/github/timbru31/mp3lyrics/badges/coverage.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
-[![Coverage Status](https://coveralls.io/repos/github/timbru31/mp3lyrics/badge.svg?branch=master)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
+[![Dependency Status](https://img.shields.io/gemnasium/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
+[![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
+[![Build Status](https://img.shields.io/travis/timbru31/mp3lyrics.svg)](https://travis-ci.org/timbru31/mp3lyrics)
+[![Circle CI](https://img.shields.io/circleci/project/timbru31/mp3lyrics.svg)](https://circleci.com/gh/timbru31/mp3lyrics)
+[![Build status](https://ci.appveyor.com/api/projects/status/c7misjwgqj4dc26d?svg=true)](https://ci.appveyor.com/project/timbru31/mp3lyrics)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
+[![Coverage Status](https://img.shields.io/coveralls/timbru31/mp3lyrics.svg)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
 
 ### Still in Alpha, ugly and WIP :)
 
