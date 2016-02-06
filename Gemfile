@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'nokogiri', '>=1.6.7.2'
 gem 'require_all', '>=1.3.3'
-gem 'rubocop', '>=0.36.0'
+gem 'rubocop', '>=0.37.0'
 gem 'ruby-mp3info', '>=0.8.9'
 
 group :development do
@@ -11,7 +11,7 @@ end
 
 group :test do
   gem 'codeclimate-test-reporter', '>=0.4.8', require: false
-  gem 'coveralls', '0.8.10', require: false
+  gem 'coveralls', '>=0.8.10', require: false
   gem 'minitest', '>=5.8.4'
   gem 'rake', '>=10.5.0'
   gem 'simplecov', '>=0.11.2', require: false
