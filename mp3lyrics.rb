@@ -4,6 +4,10 @@ require 'require_all'
 
 require_all './lib/'
 
+def to_b(string)
+  !(string =~ /^(true|t|yes|y|1)$/i).nil?
+end
+
 override = false
 dir = nil
 
@@ -11,7 +15,7 @@ case ARGV.length
 when 1
   dir = ARGV[0]
 when 2
-  override = true
+  override = to_b(ARGV[1])
   dir = ARGV[0]
 else
   puts 'Usage: ./mp3lyrics.rb <dir> [override]'

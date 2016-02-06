@@ -4,7 +4,7 @@ require 'nokogiri'
 # Base class to fetch different lyrics sites
 class Wiki
   def fetch(uri_str, limit = 10)
-    fail ArgumentError, 'The wiki site is redirecting too much, aborting...' if limit == 0
+    raise ArgumentError, 'The wiki site is redirecting too much, aborting...' if limit == 0
     url = prepare_url(uri_str)
     req = Net::HTTP::Get.new(url.path)
     response = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
