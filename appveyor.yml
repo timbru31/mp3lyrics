@@ -1,13 +1,17 @@
 version: "{build}"
+
 clone_depth: 1
+
 install:
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
   - ruby --version
   - gem --version
   - gem install bundler --quiet
   - bundler --version
-build_script:
   - bundle install --without development
+
+build: off
+
 test_script:
   - bundle exec rake
 
