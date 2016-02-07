@@ -78,3 +78,9 @@ bundle exec rake
 - ~~Add support to other lyrics sites when 404 is returned from LyricWikia~~
 - GUI for easier usage (maybe)
 - Add test cases, see [#1](https://github.com/timbru31/mp3lyrics/issues/1)
+
+## License
+This plugin is released under the
+*Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)* license.
+
+Please see [LICENSE.md](LICENSE.md) for more information.
