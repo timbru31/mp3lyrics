@@ -54,24 +54,31 @@ By dropping the need (and support) of iTunes running somewhere in the background
 ## Installation
 
 
-````shell
+```shell
 gem install bundler
 bundle install
-````
+```
+
+### A note for Windows users
+
+I have successfully run the CLI on Windows. RubyInstaller works fine, just make sure to skip the development group of the Gemfile
+```shell
+bundle install --without development
+```
 
 ## Usage
 
-````shell
+```shell
 ./mp3lyrics.rb <dir> [override]
-````
+```
 Where **dir** is the folder with your music, it's iterated recursively and **override** is a boolean toggle to override existing lyrics (defaults to *false*)
 
 ## Tests
 
 To execute the tests run
-````shell
+```shell
 bundle exec rake
-````
+```
 
 ## Future plans // ToDo
 
