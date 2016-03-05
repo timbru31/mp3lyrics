@@ -10,8 +10,8 @@ group :development do
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', '>=0.4.8', require: false
-  gem 'coveralls', '>=0.8.10', require: false
+  gem 'codeclimate-test-reporter', '>=0.5.0', require: false
+  gem 'coveralls', '>=0.8.13', require: false
   gem 'minitest', '>=5.8.4'
   gem 'rake', '>=10.5.0'
   gem 'simplecov', '>=0.11.2', require: false
