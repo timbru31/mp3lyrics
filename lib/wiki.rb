@@ -21,7 +21,6 @@ class Wiki
   end
 
   def prepare_url(uri_str)
-    uri_str = URI.encode(uri_str)
     uri_str.gsub!('%EF%BB%BF', '') # fix BOM
     URI.parse(uri_str)
   end

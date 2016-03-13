@@ -7,8 +7,8 @@ require_relative './wiki'
 # Inside the p in the lyrics div the are in a tags
 class Genius < Wiki
   def get_lyrics(artist, song)
-    artist.tr!(' ', '-')
-    song.tr!(' ', '-')
+    artist = artist.tr(' ', '-')
+    song = song.tr(' ', '-')
 
     res = fetch("http://genius.com/#{artist.downcase}-#{song.downcase}-lyrics")
     return nil unless res.is_a? Net::HTTPSuccess

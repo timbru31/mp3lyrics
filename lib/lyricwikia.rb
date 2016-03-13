@@ -6,8 +6,8 @@ require_relative './wiki'
 # There are hidden comments and script tags, that needs to be removed.
 class LyricWikia < Wiki
   def get_lyrics(artist, song)
-    artist.tr!(' ', '_')
-    song.tr!(' ', '_')
+    artist = artist.tr(' ', '_')
+    song = song.tr(' ', '_')
 
     res = fetch("http://lyrics.wikia.com/#{artist}:#{song}")
     return nil unless res.is_a? Net::HTTPSuccess

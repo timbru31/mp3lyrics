@@ -6,8 +6,8 @@ require_relative './wiki'
 # There are hidden comments and script tags, that needs to be removed.
 class MetroLyrics < Wiki
   def get_lyrics(artist, song)
-    artist.tr!(' ', '-')
-    song.tr!(' ', '-')
+    artist = artist.tr(' ', '-')
+    song = song.tr(' ', '-')
 
     res = fetch("http://www.metrolyrics.com/#{song.downcase}-lyrics-#{artist.downcase}.html")
     return nil unless res.is_a? Net::HTTPSuccess

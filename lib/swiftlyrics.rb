@@ -6,8 +6,8 @@ require_relative './wiki'
 # p tags in the div with the class "left_box_lyrics"
 class SwiftLyrics < Wiki
   def get_lyrics(artist, song)
-    artist.tr!(' ', '-')
-    song.tr!(' ', '-')
+    artist = artist.tr(' ', '-')
+    song = song.tr(' ', '-')
 
     res = fetch("http://swiftlyrics.com/lyrics/#{artist.downcase}-#{song.downcase}.html")
 
