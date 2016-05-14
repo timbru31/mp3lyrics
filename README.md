@@ -1,5 +1,4 @@
 # MP3Lyrics
-
 [![Dependency Status](https://img.shields.io/gemnasium/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
 [![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Build Status](https://img.shields.io/travis/timbru31/mp3lyrics.svg)](https://travis-ci.org/timbru31/mp3lyrics)
