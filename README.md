@@ -27,7 +27,7 @@ Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricW
 
 #### Why are you not using musiXmatch API?
 
-Simply because the charge me (the developer) for retrieving the lyrics.
+Simply because they charge me (the developer) for retrieving the lyrics.
 
 #### Why are you not using MetroLyrics API?
 
