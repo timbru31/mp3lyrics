@@ -13,9 +13,16 @@ class SwiftLyrics < Wiki
 
     return nil unless res.is_a? Net::HTTPSuccess
     return nil unless lyrics_available?(res.body)
-    lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="left_box_lyrics"]//p')
+    lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="left_box_lyrics"]')
+    prettify_lyrics(lyrics)
+  end
 
-    lyrics.inner_html.gsub!('<br>', "\r").delete!("\n")
+  def prettify_lyrics(lyrics)
+    lyrics.css('script').remove
+    lyrics.css('a').remove
+    lyrics.css('h1').remove
+    lyrics.css('div').remove
+    lyrics.inner_html.gsub!('<br>', "\r").gsub!('</p>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\t").delete!("\n")
   end
 
   def lyrics_available?(body)

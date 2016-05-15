@@ -2,14 +2,14 @@ require_relative './spec_helper'
 require_relative '../lib/metrolyrics'
 
 breaking_benjamin_lyrics = "Hold it together, birds of a feather\rNothing but lies and crooked "\
-  "wings\rI have the answer spreading the cancer\rYou are the faith inside meNo, don't leave me "\
-  "to die here\rHelp me survive here alone\rNo, don't remember, rememberPut me to sleep, evil "\
-  "angel\rOpen your wings, evil angelI'm a believer, nothing could be worse\rAll these imaginary "\
-  "friends\rHiding betrayal, driving the nail\rHoping to find a saviorNo, don't leave me to die "\
-  "here\rHelp me survive here alone\rDon't surrender, surrenderPut me to sleep, evil angel\r"\
-  "Open your wings, evil angel\rFly over me, evil angel\rWhy can't I breathe, evil angel?Put me "\
+  "wings\rI have the answer spreading the cancer\rYou are the faith inside me\rNo, don't leave me "\
+  "to die here\rHelp me survive here alone\rNo, don't remember, remember\rPut me to sleep, evil "\
+  "angel\rOpen your wings, evil angel\rI'm a believer, nothing could be worse\rAll these imaginary "\
+  "friends\rHiding betrayal, driving the nail\rHoping to find a savior\rNo, don't leave me to die "\
+  "here\rHelp me survive here alone\rDon't surrender, surrender\rPut me to sleep, evil angel\r"\
+  "Open your wings, evil angel\rFly over me, evil angel\rWhy can't I breathe, evil angel?\rPut me "\
   "to sleep, evil angel\rOpen your wings, evil angel\rFly over me, evil angel\rWhy can't I "\
-  "breathe, evil angel?\t"
+  'breathe, evil angel?'
 
 describe MetroLyrics, 'Lyrics fetching' do
   before do

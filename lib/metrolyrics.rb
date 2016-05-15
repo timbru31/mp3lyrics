@@ -13,7 +13,14 @@ class MetroLyrics < Wiki
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//*[@id="lyrics-body-text"]')
+    prettify_lyrics(lyrics.inner_html)
+  end
 
-    lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\n")
+  def prettify_lyrics(lyrics)
+    lyrics.gsub!('<br>', "\r")
+    lyrics.gsub!("</p>\n<p class=\"verse\">", "\r")
+    lyrics.gsub!(%r{</?[^>]+>}, '')
+    lyrics.delete!("\t")
+    lyrics.delete!("\n")
   end
 end
