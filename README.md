@@ -6,6 +6,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/c7misjwgqj4dc26d?svg=true)](https://ci.appveyor.com/project/timbru31/mp3lyrics)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
 [![Coverage Status](https://img.shields.io/coveralls/timbru31/mp3lyrics.svg)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE.md)
 
 ### Still in Alpha, ugly and WIP :)
 
