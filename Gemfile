@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'nokogiri', '>=1.6.7.2'
+gem 'nokogiri', '>=1.6.8'
 gem 'require_all', '>=1.3.3'
 gem 'ruby-mp3info', '>=0.8.9'
 
@@ -10,7 +10,7 @@ group :development do
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', '>=0.5.0', require: false
+  gem 'codeclimate-test-reporter', '>=0.5.1', require: false
   gem 'coveralls', '>=0.8.13', require: false
   gem 'minitest', '>=5.9.0'
   gem 'rake', '>=11.1.2'
