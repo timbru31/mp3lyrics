@@ -6,13 +6,13 @@ gem 'ruby-mp3info', '>=0.8.9'
 
 group :development do
   gem 'pry-byebug', '>=3.4.0', require: false
-  gem 'rubocop', '>=0.40.0'
+  gem 'rubocop', '>=0.41.1'
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', '>=0.5.1', require: false
+  gem 'codeclimate-test-reporter', '>=0.5.2', require: false
   gem 'coveralls', '>=0.8.13', require: false
   gem 'minitest', '>=5.9.0'
-  gem 'rake', '>=11.1.2'
+  gem 'rake', '>=11.2.2'
   gem 'simplecov', '>=0.11.2', require: false
 end
