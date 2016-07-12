@@ -4,7 +4,7 @@ require_relative './wiki'
 # Lyrics are stored accessed via the URL schema http://genius.com/ARTIST-SONG-lyrics
 # They are inside //lyircs[@class="lyrics"]//p[1], a lyrics element with the class "lyrics"
 # It seems that this element was added by Anglar.js
-# Inside the p in the lyrics div the are in a tags
+# Inside the p in the lyrics div they are in a tags
 class Genius < Wiki
   def get_lyrics(artist, song)
     artist = artist.tr(' ', '-')
