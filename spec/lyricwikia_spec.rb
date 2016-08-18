@@ -9,7 +9,7 @@ enter_shikari_lyrics = "Now, I don't know about you, but I don't think the prima
   'poverty, collusion, corruption, ruins our environment and threatens every aspect of our '\
   "health and does nothing but divide and segregate us. I don't think how much military "\
   "equipment we are selling to other countries, how many hydrocarbons we're burning, how much "\
-  "money is being printed and exchanged, is a good measure of how healthy our society is but I do "\
+  'money is being printed and exchanged, is a good measure of how healthy our society is but I do '\
   "think I can speak for everyone when I say, we're sick of this shit.\r\rTime to mobilize\r"\
   "Time to open eyes\rWe are not a quiet pocket of resistance\rThis is real, but we cannot "\
   "afford to fail\rAct with, act with persistence\rThis is real, but we cannot afford to fail"\
