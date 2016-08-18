@@ -13,12 +13,14 @@ dependencies:
     - rvm install 2.1.10
     - rvm install 2.2.5
     - rvm install 2.3.1
+    - rvm install 2.4.0-preview1
 
   override:
     - rvm-exec 2.0.0-p648 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
     - rvm-exec 2.1.10 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
     - rvm-exec 2.2.5 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
     - rvm-exec 2.3.1 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
+    - rvm-exec 2.4.0-preview1 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
 
 test:
   override:
@@ -26,3 +28,4 @@ test:
     - rvm-exec 2.1.10 bash -c "bundle exec rake"
     - rvm-exec 2.2.5 bash -c "bundle exec rake"
     - rvm-exec 2.3.1 bash -c "bundle exec rake"
+    - rvm-exec 2.4.0-preview1 bash -c "bundle exec rake"
