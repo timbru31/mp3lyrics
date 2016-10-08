@@ -23,7 +23,8 @@ Because I wanted to try another language than Java.
 
 #### Why are you not using the LyricWikia API?
 
-Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricWiki_API/REST) the lyrics can't be fully retrieved, most likely due to licensing issues.
+~~Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricWiki_API/REST) the lyrics can't be fully retrieved, most likely due to licensing issues.~~
+They no longer offer an API since January 2016.
 
 #### Why are you not using musiXmatch API?
 
