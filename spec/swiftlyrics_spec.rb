@@ -31,7 +31,7 @@ describe SwiftLyrics, 'Lyrics fetching' do
   describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
       lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
-      lyrics.must_equal nil
+      assert_nil lyrics
     end
   end
 end

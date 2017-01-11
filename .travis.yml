@@ -8,3 +8,4 @@ rvm:
 sudo: required
 dist: trusty
 before_install: gem install bundler
+after_script: bundle exec codeclimate-test-reporter

@@ -1,4 +1,4 @@
-require 'codeclimate-test-reporter'
+require 'simplecov'
 require 'coveralls'
 require 'minitest/autorun'
 
@@ -6,7 +6,6 @@ require 'minitest/autorun'
 # CodeClimate::TestReporter.start
 
 SimpleCov.formatters = [
-  Coveralls::SimpleCov::Formatter,
-  CodeClimate::TestReporter::Formatter
+  Coveralls::SimpleCov::Formatter
 ]
 SimpleCov.start
