@@ -5,9 +5,11 @@ require 'nokogiri'
 class Wiki
   def fetch(uri_str, limit = 10)
     raise ArgumentError, 'The wiki site is redirecting too much, aborting...' if limit.zero?
-    url = prepare_url(uri_str)
-    req = Net::HTTP::Get.new(url.path)
-    response = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
+    uri = prepare_url(uri_str)
+    response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+      req = Net::HTTP::Get.new(uri.path)
+      http.request(req)
+    end
     case response
     when Net::HTTPRedirection then
       fetch(response['location'], limit - 1)
