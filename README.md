@@ -1,4 +1,5 @@
 # MP3Lyrics
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/847daeb2c69a4ebebfca3f204b7c164f)](https://www.codacy.com/app/timbru31/mp3lyrics?utm_source=github.com&utm_medium=referral&utm_content=timbru31/mp3lyrics&utm_campaign=badger)
 [![Dependency Status](https://img.shields.io/gemnasium/timbru31/mp3lyrics.svg)](https://gemnasium.com/timbru31/mp3lyrics)
 [![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Build Status](https://img.shields.io/travis/timbru31/mp3lyrics.svg)](https://travis-ci.org/timbru31/mp3lyrics)
