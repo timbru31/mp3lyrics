@@ -11,7 +11,8 @@ class Wiki
       begin
         http.request(req)
       rescue EOFError
-        put 'rescue'
+        puts 'rescue'
+        fetch(uri_str, limit -1)
       end
     end
     case response
