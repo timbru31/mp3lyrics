@@ -1,6 +1,7 @@
 require 'net/http'
 require 'nokogiri'
 
+# Base class to fetch different lyrics sites
 class Wiki
   def fetch(uri_str, limit = 10)
     raise ArgumentError, 'The wiki site is redirecting too much, aborting...' if limit.zero?

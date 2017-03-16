@@ -9,7 +9,7 @@ class SwiftLyrics < Wiki
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 
-    res = fetch("http://swiftlyrics.com/lyrics/#{artist.downcase}-#{song.downcase}.html")
+    res = fetch("http://swiftlyrics.com/lyrics/#{artist.downcase}-#{song.downcase}.html", limit)
 
     return nil unless res.is_a? Net::HTTPSuccess
     return nil unless lyrics_available?(res.body)

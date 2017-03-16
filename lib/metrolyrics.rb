@@ -9,7 +9,7 @@ class MetroLyrics < Wiki
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 
-    res = fetch("http://www.metrolyrics.com/#{song.downcase}-lyrics-#{artist.downcase}.html")
+    res = fetch("http://www.metrolyrics.com/#{song.downcase}-lyrics-#{artist.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//*[@id="lyrics-body-text"]')

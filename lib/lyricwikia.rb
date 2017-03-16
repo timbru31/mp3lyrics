@@ -9,7 +9,7 @@ class LyricWikia < Wiki
     artist = artist.tr(' ', '_')
     song = song.tr(' ', '_')
 
-    res = fetch("http://lyrics.wikia.com/#{artist}:#{song}")
+    res = fetch("http://lyrics.wikia.com/#{artist}:#{song}", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyricbox"]')

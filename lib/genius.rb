@@ -10,7 +10,7 @@ class Genius < Wiki
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 
-    res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", 10)
+    res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//lyrics[@class="lyrics"]//p[1]')

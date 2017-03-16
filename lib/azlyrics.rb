@@ -9,7 +9,7 @@ class AZLyrics < Wiki
     artist = artist.delete(' ')
     song = song.delete(' ')
 
-    res = fetch("http://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html")
+    res = fetch("http://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('/html/body/div[3]/div/div[2]/div[5]')
