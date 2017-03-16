@@ -6,7 +6,7 @@ dependencies:
   bundler:
     without: [test]
   cache_directories:
-    - "vendor/bundle"
+    - vendor/bundle
 
   pre:
     - rvm install 2.1.10
