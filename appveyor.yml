@@ -3,6 +3,8 @@ version: "{build}"
 clone_depth: 1
 
 install:
+  - cinst wget
+  - ps: wget http://curl.haxx.se/ca/cacert.pem -O C:\cacert.pem && setx /M SSL_CERT_FILE "C:\cacert.pem"
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
   - ruby --version
   - gem --version

@@ -10,7 +10,7 @@ class Wiki
       begin
         http.request(req)
       rescue EOFError
-        fetch(uri_str, limit -1)
+        fetch(uri_str, limit - 1)
       end
     end
     case response
