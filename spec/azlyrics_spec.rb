@@ -1,26 +1,26 @@
 require_relative './spec_helper'
 require_relative '../lib/azlyrics'
 
-rise_against_lyrics = "He said \"Son, have you seen the world?\r\rWell, what would you say if I "\
-  "said that you could?\r\rJust carry this gun and you'll even get paid.\"\r\rI said \"That "\
-  "sounds pretty good.\"\r\r\r\rBlack leather boots\r\rSpit-shined so bright\r\rThey cut off my "\
-  "hair but it looked alright\r\rWe marched and we sang\r\rWe all became friends\r\rAs we "\
-  "learned how to fight\r\r\r\rA hero of war\r\rYeah that's what I'll be\r\rAnd when I come home"\
-  "\r\rThey'll be damn proud of me\r\rI'll carry this flag\r\rTo the grave if I must\r\rBecause "\
-  "it's a flag that I love\r\rAnd a flag that I trust\r\r\r\rI kicked in the door\r\rI yelled my "\
-  "commands\r\rThe children, they cried\r\rBut I got my man\r\rWe took him away\r\rA bag over "\
-  "his face\r\rFrom his family and his friends\r\r\r\rThey took off his clothes\r\rThey pissed "\
-  "in his hands\r\rI told them to stop\r\rBut then I joined in\r\rWe beat him with guns\r\rAnd "\
-  "batons not just once\r\rBut again and again\r\r\r\rA hero of war\r\rYeah that's what I'll be"\
-  "\r\rAnd when I come home\r\rThey'll be damn proud of me\r\rI'll carry this flag\r\rTo the "\
-  "grave if I must\r\rBecause it's a flag that I love\r\rAnd a flag that I trust\r\r\r\rShe "\
-  "walked through bullets and haze\r\rI asked her to stop\r\rI begged her to stay\r\rBut she "\
-  "pressed on\r\rSo I lifted my gun\r\rAnd I fired away\r\r\r\rThe shells jumped through the "\
-  "smoke\r\rAnd into the sand\r\rThat the blood now had soaked\r\rShe collapsed with a flag in "\
-  "her hand\r\rA flag white as snow\r\r\r\rA hero of war\r\rIs that what they see\r\rJust medals "\
-  "and scars\r\rSo damn proud of me\r\rAnd I brought home that flag\r\rNow it gathers dust\r\r"\
-  "But it's a flag that I love\r\rIt's the only flag I trust\r\r\r\rHe said, \"Son, have you "\
-  "seen the world? \r\rWell what would you say, if I said that you could?\""
+rise_against_lyrics = "He said \"Son, have you seen the world?\rWell, what would you say if I "\
+  "said that you could?\rJust carry this gun and you'll even get paid\"\rI said \"That "\
+  "sounds pretty good\"\r\rBlack leather boots\rSpit-shined so bright\rThey cut off my "\
+  "hair but it looks alright\rWe marched and we sang\rWe all became friends\rAs we "\
+  "learned how to fight\r\rA hero of war\rYeah that's what I'll be\rAnd when I come home"\
+  "\rThey'll be damn proud of me\rI'll carry this flag\rTo the grave if I must\rBecause "\
+  "it's a flag that I love\rAnd a flag that I trust\r\rI kicked in the door\rI yelled my "\
+  "commands\rThe children, they cried\rBut I got my man\rWe took him away\rA bag over "\
+  "his face\rFrom his family and his friends\r\rThey took off his clothes\rThey pissed "\
+  "in his hands\rI told them to stop\rBut then I joined in\rWe beat him with guns\rAnd "\
+  "batons not just once\rBut again and again\r\rA hero of war\rYeah that's what I'll be"\
+  "\rAnd when I come home\rThey'll be damn proud of me\rI'll carry this flag\rTo the "\
+  "grave if I must\rBecause it's a flag that I love\rAnd a flag that I trust\r\rShe "\
+  "walked through bullets and haze\rI asked her to stop\rI begged her to stay\rBut she "\
+  "pressed on\rSo I lifted my gun\rAnd I fired away\r\rAnd the shells jumped through the "\
+  "smoke\rAnd into the sand\rThat the blood now had soaked\rShe collapsed with a flag in "\
+  "her hand\rA flag white as snow\r\rA hero of war\rIs that what they see\rJust medals "\
+  "and scars\rSo damn proud of me\rAnd I brought home that flag\rNow it gathers dust\r"\
+  "But it's a flag that I love\rIt's the only flag I trust\r\rHe said, \"Son, have you "\
+  "seen the world?\rWell what would you say, if I said that you could?\""
 
 describe AZLyrics, 'Lyrics fetching' do
   before do
