@@ -5,7 +5,7 @@ require_relative './wiki'
 # They are inside //div[@class="lyricbox"], a div with the class "lyricbox"
 # There are hidden comments and script tags, that needs to be removed.
 class MetroLyrics < Wiki
-  def get_lyrics(artist, song)
+  def get_lyrics(artist, song, limit = 10)
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 

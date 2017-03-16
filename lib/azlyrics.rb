@@ -5,7 +5,7 @@ require_relative './wiki'
 # They are inside /html/body/div[3]/div/div[2]/div[5], sadly no class to access.
 # There are hidden comments, which need to be removed.
 class AZLyrics < Wiki
-  def get_lyrics(artist, song)
+  def get_lyrics(artist, song, limit = 10)
     artist = artist.delete(' ')
     song = song.delete(' ')
 

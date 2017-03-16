@@ -5,7 +5,7 @@ require_relative './wiki'
 # They are inside //div[@class="left_box_lyrics"]//p,
 # p tags in the div with the class "left_box_lyrics"
 class SwiftLyrics < Wiki
-  def get_lyrics(artist, song)
+  def get_lyrics(artist, song, limit = 10)
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 

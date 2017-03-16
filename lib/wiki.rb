@@ -1,17 +1,15 @@
 require 'net/http'
 require 'nokogiri'
 
-# Base class to fetch different lyrics sites
 class Wiki
   def fetch(uri_str, limit = 10)
     raise ArgumentError, 'The wiki site is redirecting too much, aborting...' if limit.zero?
     uri = prepare_url(uri_str)
     response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
-      req = Net::HTTP::Get.new(URI.encode(uri.path))
+      req = Net::HTTP::Get.new(uri.path)
       begin
         http.request(req)
       rescue EOFError
-        puts 'rescue'
         fetch(uri_str, limit -1)
       end
     end

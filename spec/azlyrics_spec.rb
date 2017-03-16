@@ -29,14 +29,14 @@ describe AZLyrics, 'Lyrics fetching' do
 
   describe 'with the song Rise Against - Hero of War' do
     it 'fetches the right lyrics from AZLyrics' do
-      lyrics = @wiki.get_lyrics('Rise Against', 'Hero of War')
+      lyrics = @wiki.get_lyrics('Rise Against', 'Hero of War', 20)
       lyrics.must_equal rise_against_lyrics
     end
   end
 
   describe 'with the song Non Existing - No Song' do
     it 'returns nil since this song does not exist' do
-      lyrics = @wiki.get_lyrics('Non Existing', 'No Song')
+      lyrics = @wiki.get_lyrics('Non Existing', 'No Song', 20)
       assert_nil lyrics
     end
   end
