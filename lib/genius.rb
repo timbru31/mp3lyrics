@@ -6,7 +6,7 @@ require_relative './wiki'
 # It seems that this element was added by Anglar.js
 # Inside the p in the lyrics div they are in a tags
 class Genius < Wiki
-  def get_lyrics(artist, song)
+  def get_lyrics(artist, song, limit = 10)
     artist = artist.tr(' ', '-')
     song = song.tr(' ', '-')
 
