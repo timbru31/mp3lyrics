@@ -6,7 +6,7 @@ gem 'ruby-mp3info', '>=0.8.10'
 
 group :development do
   gem 'pry-byebug', '>=3.4.2', require: false
-  gem 'rubocop', '>=0.47.1'
+  gem 'rubocop', '>=0.48.0'
 end
 
 group :test do
