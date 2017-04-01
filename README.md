@@ -71,9 +71,11 @@ bundle install --without development
 ## Usage
 
 ```shell
-./mp3lyrics.rb <dir> [override]
+./mp3lyrics.rb <dir> [-override true/false] [-use lyricwikia/genius/metrolyrics/azlyrics/swiftlyrics]
 ```
-Where **dir** is the folder with your music, it's iterated recursively and **override** is a boolean toggle to override existing lyrics (defaults to *false*)
+**dir** is the folder with your music, it's iterated recursively.
+**override** is a boolean toggle to override existing lyrics (defaults to *false*).
+**use** is a specific wiki to be used to download lyrics (all wikis are used by default).
 
 ## Tests
 
