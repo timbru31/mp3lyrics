@@ -8,46 +8,50 @@ def to_b(string)
   !(string =~ /^(true|t|yes|y|1)$/i).nil?
 end
 
-def usage_message(overide_options, wiki_options)
-  'Usage: ./mp3lyrics.rb <dir> [-overide ' + overide_options.join("/") + '] [-wiki ' + wiki_options.join("/") + ']'
+def usage_message(override_options, wiki_options)
+  'Usage: ./mp3lyrics.rb <dir> [-override ' + override_options.join('/') + '] [-wiki ' + wiki_options.join('/') + ']'
 end
 
-override = false
-wiki_to_use = nil
-dir = nil
+override_options = [true, false]
+wiki_options = %w(lyricwikia genius metrolyrics azlyrics swiftlyrics)
+
+if (ARGV.length.even? ||
+  ARGV.count('-override') > 1 ||
+  ARGV.count('-wiki') > 1)
+  # If there is an even number of arguments (includes no arguments)
+  # or a flag has been used more than once
+  puts usage_message(override_options, wiki_options)
+  exit
+end
 
 dir = ARGV[0]
-if ARGV.length > 1
+override = false
+wiki_to_use = nil
 
-  i = 1
-  overide_options = ["true", "false"]
-  wiki_options = ["lyricwikia", "genius", "metrolyrics", "azlyrics", "swiftlyrics"]
-
-  if ARGV.length % 2 == 0 or ARGV.count(/-overide/) > 1 or ARGV.count(/-wiki/) > 1
-    puts usage_message(overide_options, wiki_options)
+i = 1
+while i < ARGV.length
+  if ARGV[i] == '-override'
+    if override_options.include?(to_b(ARGV[i + 1]))
+      override = to_b(ARGV[i + 1])
+    else
+      # If the argument after the override flag is invalid
+      puts usage_message(override_options, wiki_options)
+      exit
+    end
+  elsif ARGV[i] == '-wiki'
+    if wiki_options.include?(ARGV[i + 1])
+      wiki_to_use = ARGV[i + 1]
+    else
+      # If the argument after the wiki flag is invalid
+      puts usage_message(override_options, wiki_options)
+      exit
+    end
+  else
+    # If the argument is not a valid flag
+    puts usage_message(override_options, wiki_options)
     exit
   end
-
-  while i < ARGV.length do
-    if ARGV[i] == "-overide"
-      if overide_options.include?(ARGV[i + 1])
-        override = to_b(ARGV[i + 1])
-      else
-        puts usage_message(overide_options, wiki_options)
-        exit
-      end
-    end
-    if ARGV[i] == "-wiki"
-      if wiki_options.include?(ARGV[i + 1])
-        wiki_to_use = ARGV[i + 1]
-      else
-        puts usage_message(overide_options, wiki_options)
-        exit
-      end
-    end
-    i += 1
-  end
-
+  i += 2
 end
 
 puts "
@@ -63,9 +67,7 @@ puts "
 
 The current working directory is #{dir}
 Overriding existing lyrics is #{override}"
-if wiki_to_use != nil
-  puts "Specific wiki to use is #{wiki_to_use}"
-end
+puts "Specific wiki to use is #{wiki_to_use}" unless wiki_to_use.nil?
 puts "\n\r"
 
 wiki = Wiki.new
@@ -84,19 +86,19 @@ files.each do |file|
     # Either no tag is set, the mp3 file has no USLT tag or we override anyway
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
       lyrics = nil
-      if wiki_to_use == nil or wiki_to_use == "lyricwikia"
+      if wiki_to_use.nil? || wiki_to_use == 'lyricwikia'
         lyrics = LyricWikia.new.get_lyrics(artist, title)
       end
-      if wiki_to_use == nil or wiki_to_use == "genius"
+      if wiki_to_use.nil? || wiki_to_use == 'genius'
         lyrics = Genius.new.get_lyrics(artist, title) if lyrics.nil?
       end
-      if wiki_to_use == nil or wiki_to_use == "metrolyrics"
+      if wiki_to_use.nil? || wiki_to_use == 'metrolyrics'
         lyrics = MetroLyrics.new.get_lyrics(artist, title) if lyrics.nil?
       end
-      if wiki_to_use == nil or wiki_to_use == "azlyrics"
+      if wiki_to_use.nil? || wiki_to_use == 'azlyrics'
         lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
       end
-      if wiki_to_use == nil or wiki_to_use == "swiftlyrics"
+      if wiki_to_use.nil? || wiki_to_use == 'swiftlyrics'
         lyrics = SwiftLyrics.new.get_lyrics(artist, title) if lyrics.nil?
       end
       if lyrics.nil?
