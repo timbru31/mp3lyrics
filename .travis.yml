@@ -6,5 +6,6 @@ rvm:
   - 2.4.1
 sudo: required
 dist: trusty
+cache: bundler
 before_install: gem install bundler
-script: rake TEST='spec/**/[!az]*_spec.rb'
+script: bundle exec rake TEST='spec/**/[!az]*_spec.rb'
