@@ -8,18 +8,50 @@ def to_b(string)
   !(string =~ /^(true|t|yes|y|1)$/i).nil?
 end
 
-override = false
-dir = nil
+def usage_message(override_options, use_options)
+  'Usage: ./mp3lyrics.rb <dir> [-override ' + override_options.join('/') + '] [-use ' + use_options.join('/') + ']'
+end
 
-case ARGV.length
-when 1
-  dir = ARGV[0]
-when 2
-  override = to_b(ARGV[1])
-  dir = ARGV[0]
-else
-  puts 'Usage: ./mp3lyrics.rb <dir> [override]'
+override_options = [true, false]
+use_options = %w(lyricwikia genius metrolyrics azlyrics swiftlyrics)
+
+if ARGV.length.even? ||
+   ARGV.count('-override') > 1 ||
+   ARGV.count('-use') > 1
+  # If there is an even number of arguments (includes no arguments)
+  # or a flag has been used more than once
+  puts usage_message(override_options, use_options)
   exit
+end
+
+dir = ARGV[0]
+override = false
+wiki_to_use = nil
+
+i = 1
+while i < ARGV.length
+  if ARGV[i] == '-override'
+    if override_options.include?(to_b(ARGV[i + 1]))
+      override = to_b(ARGV[i + 1])
+    else
+      # If the argument after the override flag is invalid
+      puts usage_message(override_options, use_options)
+      exit
+    end
+  elsif ARGV[i] == '-use'
+    if use_options.include?(ARGV[i + 1])
+      wiki_to_use = ARGV[i + 1]
+    else
+      # If the argument after the use flag is invalid
+      puts usage_message(override_options, use_options)
+      exit
+    end
+  else
+    # If the argument is not a valid flag
+    puts usage_message(override_options, use_options)
+    exit
+  end
+  i += 2
 end
 
 puts "
@@ -34,7 +66,9 @@ puts "
                            |___\/
 
 The current working directory is #{dir}
-Overriding existing lyrics is #{override}\n\r"
+Overriding existing lyrics is #{override}"
+puts "Specific wiki to use is #{wiki_to_use}" unless wiki_to_use.nil?
+puts "\n\r"
 
 wiki = Wiki.new
 files = Dir.glob("#{dir}/**/*")
@@ -51,11 +85,22 @@ files.each do |file|
     puts "Fetching lyrics for #{artist} - #{title}"
     # Either no tag is set, the mp3 file has no USLT tag or we override anyway
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
-      lyrics = LyricWikia.new.get_lyrics(artist, title)
-      lyrics = Genius.new.get_lyrics(artist, title) if lyrics.nil?
-      lyrics = MetroLyrics.new.get_lyrics(artist, title) if lyrics.nil?
-      lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
-      lyrics = SwiftLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      lyrics = nil
+      if wiki_to_use.nil? || wiki_to_use == 'lyricwikia'
+        lyrics = LyricWikia.new.get_lyrics(artist, title)
+      end
+      if wiki_to_use.nil? || wiki_to_use == 'genius'
+        lyrics = Genius.new.get_lyrics(artist, title) if lyrics.nil?
+      end
+      if wiki_to_use.nil? || wiki_to_use == 'metrolyrics'
+        lyrics = MetroLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      end
+      if wiki_to_use.nil? || wiki_to_use == 'azlyrics'
+        lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      end
+      if wiki_to_use.nil? || wiki_to_use == 'swiftlyrics'
+        lyrics = SwiftLyrics.new.get_lyrics(artist, title) if lyrics.nil?
+      end
       if lyrics.nil?
         puts "Did not find any lyrics\n\r"
       else
