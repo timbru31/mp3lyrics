@@ -16,8 +16,8 @@ override_options = [true, false]
 wiki_options = %w(lyricwikia genius metrolyrics azlyrics swiftlyrics)
 
 if ARGV.length.even? ||
-  ARGV.count('-override') > 1 ||
-  ARGV.count('-wiki') > 1
+ARGV.count('-override') > 1 ||
+ARGV.count('-wiki') > 1
   # If there is an even number of arguments (includes no arguments)
   # or a flag has been used more than once
   puts usage_message(override_options, wiki_options)
