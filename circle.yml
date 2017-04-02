@@ -73,5 +73,5 @@ dependencies:
 
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.1.10 bundle exec rake ;; 1) rvm-exec 2.2.7 bundle exec rake ;; 2) rvm-exec 2.3.4 bundle exec rake ;; 3) rvm-exec 2.4.1 bundle exec rake ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.1.10 bundle exec rake && bundle exec codeclimate-test-reporter ;; 1) rvm-exec 2.2.7 bundle exec rake && bundle exec codeclimate-test-reporter ;; 2) rvm-exec 2.3.4 bundle exec rake && bundle exec codeclimate-test-reporter ;; 3) rvm-exec 2.4.1 bundle exec rake && bundle exec codeclimate-test-reporter ;; esac:
         parallel: true
