@@ -6,16 +6,6 @@ machine:
     - >
       case $CIRCLE_NODE_INDEX in
         0)
-          if [[ -e ~/rvm_binaries/ruby-2.1.10.tar.bz2 ]]
-          then
-            rvm mount ~/rvm_binaries/ruby-2.1.10.tar.bz2
-          else
-            mkdir -p ~/rvm_binaries
-            rvm install 2.1.10
-            cd ~/rvm_binaries && rvm prepare 2.1.10
-          fi
-          ;;
-        1)
           if [[ -e ~/rvm_binaries/ruby-2.2.7.tar.bz2 ]]
           then
             rvm mount ~/rvm_binaries/ruby-2.2.7.tar.bz2
@@ -25,7 +15,7 @@ machine:
             cd ~/rvm_binaries && rvm prepare 2.2.7
           fi
           ;;
-        2)
+        1)
           if [[ -e ~/rvm_binaries/ruby-2.3.4.tar.bz2 ]]
           then
             rvm mount ~/rvm_binaries/ruby-2.3.4.tar.bz2
@@ -35,7 +25,7 @@ machine:
             cd ~/rvm_binaries && rvm prepare 2.3.4
           fi
           ;;
-        3)
+        2)
           if [[ -e ~/rvm_binaries/ruby-2.4.1.tar.bz2 ]]
           then
             rvm mount ~/rvm_binaries/ruby-2.4.1.tar.bz2
@@ -48,8 +38,6 @@ machine:
       esac
 
 dependencies:
-  bundler:
-    without: [test]
   cache_directories:
     - ~/rvm_binaries
     - vendor/bundle
@@ -58,20 +46,17 @@ dependencies:
     - >
       case $CIRCLE_NODE_INDEX in
        0)
-         rvm-exec 2.1.10 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
-         ;;
-       1)
          rvm-exec 2.2.7 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
          ;;
-       2)
+       1)
          rvm-exec 2.3.4 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
          ;;
-       3)
+       2)
          rvm-exec 2.4.1 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
          ;;
       esac
 
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.1.10 bundle exec rake && bundle exec codeclimate-test-reporter ;; 1) rvm-exec 2.2.7 bundle exec rake && bundle exec codeclimate-test-reporter ;; 2) rvm-exec 2.3.4 bundle exec rake && bundle exec codeclimate-test-reporter ;; 3) rvm-exec 2.4.1 bundle exec rake && bundle exec codeclimate-test-reporter ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.2.7 bundle exec rake ;; 1) rvm-exec 2.3.4 bundle exec rake ;; 2) rvm-exec 2.4.1 bundle exec rake && bundle exec codeclimate-test-reporter ;; esac:
         parallel: true
