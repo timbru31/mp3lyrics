@@ -1,9 +1,0 @@
-# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
-# ignores vulnerabilities until expiry date; change duration by modifying expiry date
-ignore:
-  SNYK-RUBY-NOKOGIRI-20299:
-    - '* > nokogiri@1.7.0.1':
-        reason: None given
-        expires: '2017-04-21T09:09:17.015Z'
-patch: {}
