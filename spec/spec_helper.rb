@@ -2,8 +2,8 @@ require 'simplecov'
 require 'coveralls'
 require 'minitest/autorun'
 
-# Coveralls.wear!
-# CodeClimate::TestReporter.start
+if ENV['TRAVIS'] != 'true' && ENV['CIRCLECI'] != 'true'
+  SimpleCov.formatters = [Coveralls::SimpleCov::Formatter]
+end
 
-SimpleCov.formatters = [Coveralls::SimpleCov::Formatter] unless ENV['TRAVIS'] == 'true'
 SimpleCov.start
