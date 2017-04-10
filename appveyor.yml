@@ -11,12 +11,13 @@ install:
   - gem --version
   - gem install bundler --quiet
   - bundler --version
-  - bundle install --without development
+  - bundle install
 
 build: off
 
 test_script:
   - bundle exec rake
+  - bundle exec codeclimate-test-reporter
 
 environment:
   matrix:
