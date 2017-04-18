@@ -7,6 +7,7 @@
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
 [![Coverage Status](https://img.shields.io/coveralls/timbru31/mp3lyrics.svg)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/847daeb2c69a4ebebfca3f204b7c164f)](https://www.codacy.com/app/timbru31/mp3lyrics?utm_source=github.com&utm_medium=referral&utm_content=timbru31/mp3lyrics&utm_campaign=badger)
+[![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE.md)
 
 ### Still in Alpha, ugly and WIP :)
