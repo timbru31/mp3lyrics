@@ -10,7 +10,7 @@ group :development do
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', :git => 'https://github.com/timbru31/ruby-test-reporter.git', require: false
+  gem 'codeclimate-test-reporter', git: 'https://github.com/timbru31/ruby-test-reporter.git', require: false
   gem 'coveralls', '>=0.8.20', require: false
   gem 'minitest', '>=5.10.1'
   gem 'rake', '>=12.0.0 '
