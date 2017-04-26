@@ -6,8 +6,8 @@ require_relative './wiki'
 # There are hidden comments, which need to be removed.
 class AZLyrics < Wiki
   def get_lyrics(artist, song, limit = 10)
-    artist = artist.delete(' ')
-    song = song.delete(' ')
+    artist = artist.delete(' ').parameterize
+    song = song.delete(' ').parameterize
 
     res = fetch("http://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess
@@ -18,6 +18,6 @@ class AZLyrics < Wiki
 
   def prettify_lyrics(lyrics)
     lyrics.search('.//comment()').remove
-    lyrics.inner_html.gsub!('<br>', "\r").delete!("\n").sub!("\r\r", '')
+    lyrics.inner_html.gsub('<br>', "\r").delete("\n").sub("\r\r", '')
   end
 end

@@ -19,6 +19,6 @@ class LyricWikia < Wiki
   def prettify_lyrics(lyrics)
     lyrics.search('//script').remove
     lyrics.search('.//comment()').remove
-    lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\n")
+    lyrics.inner_html.gsub('<br>', "\r").gsub(%r{</?[^>]+>}, '').delete("\n")
   end
 end

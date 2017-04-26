@@ -6,8 +6,8 @@ require_relative './wiki'
 # There are hidden comments and script tags, that needs to be removed.
 class MetroLyrics < Wiki
   def get_lyrics(artist, song, limit = 10)
-    artist = artist.tr(' ', '-')
-    song = song.tr(' ', '-')
+    artist = artist.tr(' ', '-').parameterize
+    song = song.tr(' ', '-').parameterize
 
     res = fetch("http://www.metrolyrics.com/#{song.downcase}-lyrics-#{artist.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess
@@ -17,10 +17,10 @@ class MetroLyrics < Wiki
   end
 
   def prettify_lyrics(lyrics)
-    lyrics.gsub!('<br>', "\r")
-    lyrics.gsub!("</p>\n<p class=\"verse\">", "\r")
-    lyrics.gsub!(%r{</?[^>]+>}, '')
-    lyrics.delete!("\t")
-    lyrics.delete!("\n")
+    lyrics = lyrics.gsub('<br>', "\r")
+    lyrics = lyrics.gsub("</p>\n<p class=\"verse\">", "\r")
+    lyrics = lyrics.gsub(%r{</?[^>]+>}, '')
+    lyrics = lyrics.delete("\t")
+    lyrics = lyrics.delete("\n")
   end
 end

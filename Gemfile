@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activesupport', '>=5.0.2'
 gem 'nokogiri', '>=1.7.1'
 gem 'require_all', '>=1.4.0'
 gem 'ruby-mp3info', '>=0.8.10'

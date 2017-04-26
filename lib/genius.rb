@@ -7,13 +7,13 @@ require_relative './wiki'
 # Inside the p in the lyrics div they are in a tags
 class Genius < Wiki
   def get_lyrics(artist, song, limit = 10)
-    artist = artist.tr(' ', '-')
-    song = song.tr(' ', '-')
+    artist = artist.tr(' ', '-').parameterize
+    song = song.tr(' ', '-').parameterize
 
     res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//lyrics[@class="lyrics"]//p[1]')
-    lyrics.inner_html.gsub!('<br>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\n")
+    lyrics.inner_html.gsub('<br>', "\r").gsub(%r{</?[^>]+>}, '').delete("\n")
   end
 end

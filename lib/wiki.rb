@@ -1,3 +1,4 @@
+require 'active_support/inflector'
 require 'net/http'
 require 'nokogiri'
 
@@ -28,6 +29,6 @@ class Wiki
 
   def prepare_url(uri_str)
     uri_str.gsub!('%EF%BB%BF', '') # fix BOM
-    URI.parse(uri_str)
+    URI.parse(URI.encode(uri_str))
   end
 end

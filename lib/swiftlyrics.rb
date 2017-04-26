@@ -22,7 +22,7 @@ class SwiftLyrics < Wiki
     lyrics.css('a').remove
     lyrics.css('h1').remove
     lyrics.css('div').remove
-    lyrics.inner_html.gsub!('<br>', "\r").gsub!('</p>', "\r").gsub!(%r{</?[^>]+>}, '').delete!("\t").delete!("\n")
+    lyrics.inner_html.gsub('<br>', "\r").gsub('</p>', "\r").gsub(%r{</?[^>]+>}, '').delete("\t").delete("\n")
   end
 
   def lyrics_available?(body)
