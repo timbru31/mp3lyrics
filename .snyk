@@ -5,5 +5,5 @@ ignore:
   SNYK-RUBY-NOKOGIRI-20299:
     - '* > nokogiri@1.7.2':
         reason: None given
-        expires: '2017-06-16T14:13:18.727Z'
+        expires: '2017-09-16T14:13:18.727Z'
 patch: {}
