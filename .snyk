@@ -3,7 +3,7 @@ version: v1.7.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-RUBY-NOKOGIRI-20299:
-    - '* > nokogiri@1.7.2':
+    - '* > nokogiri@1.8.0':
         reason: None given
         expires: '2017-09-16T14:13:18.727Z'
 patch: {}
