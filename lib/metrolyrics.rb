@@ -13,6 +13,8 @@ class MetroLyrics < Wiki
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//*[@id="lyrics-body-text"]')
+    lyrics.search('.driver-photos').remove
+    lyrics.search('.driver-related').remove
     prettify_lyrics(lyrics.inner_html)
   end
 
