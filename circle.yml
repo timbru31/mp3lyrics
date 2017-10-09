@@ -6,33 +6,23 @@ machine:
     - >
       case $CIRCLE_NODE_INDEX in
         0)
-          if [[ -e ~/rvm_binaries/ruby-2.2.7.tar.bz2 ]]
+          if [[ -e ~/rvm_binaries/ruby-2.3.5.tar.bz2 ]]
           then
-            rvm mount ~/rvm_binaries/ruby-2.2.7.tar.bz2
+            rvm mount ~/rvm_binaries/ruby-2.3.5.tar.bz2
           else
             mkdir -p ~/rvm_binaries
-            rvm install 2.2.7
-            cd ~/rvm_binaries && rvm prepare 2.2.7
+            rvm install 2.3.5
+            cd ~/rvm_binaries && rvm prepare 2.3.5
           fi
           ;;
         1)
-          if [[ -e ~/rvm_binaries/ruby-2.3.4.tar.bz2 ]]
+          if [[ -e ~/rvm_binaries/ruby-2.4.2.tar.bz2 ]]
           then
-            rvm mount ~/rvm_binaries/ruby-2.3.4.tar.bz2
+            rvm mount ~/rvm_binaries/ruby-2.4.2.tar.bz2
           else
             mkdir -p ~/rvm_binaries
-            rvm install 2.3.4
-            cd ~/rvm_binaries && rvm prepare 2.3.4
-          fi
-          ;;
-        2)
-          if [[ -e ~/rvm_binaries/ruby-2.4.1.tar.bz2 ]]
-          then
-            rvm mount ~/rvm_binaries/ruby-2.4.1.tar.bz2
-          else
-            mkdir -p ~/rvm_binaries
-            rvm install 2.4.1
-            cd ~/rvm_binaries && rvm prepare 2.4.1
+            rvm install 2.4.2
+            cd ~/rvm_binaries && rvm prepare 2.4.2
           fi
           ;;
       esac
@@ -46,17 +36,14 @@ dependencies:
     - >
       case $CIRCLE_NODE_INDEX in
        0)
-         rvm-exec 2.2.7 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
+         rvm-exec 2.3.5 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
          ;;
        1)
-         rvm-exec 2.3.4 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
-         ;;
-       2)
-         rvm-exec 2.4.1 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
+         rvm-exec 2.4.2 bash -c "bundle check --path=vendor/bundle || bundle install --path=vendor/bundle"
          ;;
       esac
 
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.2.7 bundle exec rake TEST='spec/**/[!az]*_spec.rb' ;; 1) rvm-exec 2.3.4 bundle exec rake TEST='spec/**/[!az]*_spec.rb' ;; 2) rvm-exec 2.4.1 bundle exec rake TEST='spec/**/[!az]*_spec.rb' ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) rvm-exec 2.3.5 bundle exec rake TEST='spec/**/[!az]*_spec.rb' ;; 1) rvm-exec 2.4.2 bundle exec rake TEST='spec/**/[!az]*_spec.rb' ;; esac:
         parallel: true
