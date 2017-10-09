@@ -98,9 +98,6 @@ files.each do |file|
       if wiki_to_use.nil? || wiki_to_use == 'azlyrics'
         lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
       end
-      if wiki_to_use.nil? || wiki_to_use == 'swiftlyrics'
-        lyrics = SwiftLyrics.new.get_lyrics(artist, title) if lyrics.nil?
-      end
       if lyrics.nil?
         puts "Did not find any lyrics\n\r"
       else
