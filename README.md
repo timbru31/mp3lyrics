@@ -11,13 +11,13 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
 
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE.md)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 
 ### Still in Alpha, ugly and WIP :)
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](http://azlyrics.com) and [Genius](http://genius.com).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
 The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](http://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
@@ -94,8 +94,5 @@ bundle exec rake
 - GUI for easier usage (maybe)
 - Add test cases, see [#1](https://github.com/timbru31/mp3lyrics/issues/1)
 
-## License
-This plugin is released under the
-*Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)* license.
-
-Please see [LICENSE.md](LICENSE.md) for more information.
+---
+Built by (c) Tim Brust and contributors. Released under the MIT license.
