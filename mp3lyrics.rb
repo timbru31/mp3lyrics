@@ -13,7 +13,7 @@ def usage_message(override_options, use_options)
 end
 
 override_options = [true, false]
-use_options = %w(lyricwikia genius metrolyrics azlyrics)
+use_options = %w[lyricwikia genius metrolyrics azlyrics]
 
 if ARGV.length.even? ||
    ARGV.count('-override') > 1 ||

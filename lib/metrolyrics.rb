@@ -23,6 +23,6 @@ class MetroLyrics < Wiki
     lyrics = lyrics.gsub("</p>\n<p class=\"verse\">", "\r")
     lyrics = lyrics.gsub(%r{</?[^>]+>}, '')
     lyrics = lyrics.delete("\t")
-    lyrics = lyrics.delete("\n")
+    lyrics.delete("\n")
   end
 end
