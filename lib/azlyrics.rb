@@ -1,7 +1,7 @@
 require_relative './wiki'
 
 # Fetches the lyrics from AZLyrics.com
-# Lyrics are stored accessed via the URL schema http://www.azlyrics.com/lyrics/ARTIST/SONG.html
+# Lyrics are stored accessed via the URL schema https://www.azlyrics.com/lyrics/ARTIST/SONG.html
 # They are inside /html/body/div[3]/div/div[2]/div[5], sadly no class to access.
 # There are hidden comments, which need to be removed.
 class AZLyrics < Wiki
@@ -9,7 +9,7 @@ class AZLyrics < Wiki
     artist = artist.delete(' ').parameterize
     song = song.delete(' ').parameterize
 
-    res = fetch("http://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html", limit)
+    res = fetch("https://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('/html/body/div[3]/div/div[2]/div[5]')
