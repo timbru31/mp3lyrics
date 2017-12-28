@@ -1,5 +1,5 @@
 # MP3Lyrics
-[![Dependency Status](https://img.shields.io/gemnasium/timbru31/mp3lyrics.svg)](https://gemnasium.com/github.com/timbru31/mp3lyrics)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/timbru31/mp3lyrics.svg)](https://beta.gemnasium.com/projects/github.com/timbru31/mp3lyrics)
 
 [![Build Status](https://img.shields.io/travis/timbru31/mp3lyrics.svg)](https://travis-ci.org/timbru31/mp3lyrics)
 [![Circle CI](https://img.shields.io/circleci/project/timbru31/mp3lyrics.svg)](https://circleci.com/gh/timbru31/mp3lyrics)
