@@ -8,6 +8,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/847daeb2c69a4ebebfca3f204b7c164f)](https://www.codacy.com/app/timbru31/mp3lyrics?utm_source=github.com&utm_medium=referral&utm_content=timbru31/mp3lyrics&utm_campaign=badger)
 [![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/mp3lyrics)](https://dependabot.com)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 
