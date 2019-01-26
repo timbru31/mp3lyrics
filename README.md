@@ -5,8 +5,7 @@
 
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
 [![Coverage Status](https://img.shields.io/coveralls/timbru31/mp3lyrics.svg)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/847daeb2c69a4ebebfca3f204b7c164f)](https://www.codacy.com/app/timbru31/mp3lyrics?utm_source=github.com&utm_medium=referral&utm_content=timbru31/mp3lyrics&utm_campaign=badger)
-[![Code Climate](https://img.shields.io/codeclimate/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics)
+![Code Climate](https://img.shields.io/codeclimate/maintainability/timbru31/mp3lyrics.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/mp3lyrics)](https://dependabot.com)
 

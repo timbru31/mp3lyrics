@@ -16,12 +16,9 @@ build: off
 
 test_script:
   - bundle exec rake
-  - bundle exec codeclimate-test-reporter
 
 environment:
   matrix:
-    - ruby_version: "23"
-    - ruby_version: "23-x64"
     - ruby_version: "24"
     - ruby_version: "24-x64"
     - ruby_version: "25"
