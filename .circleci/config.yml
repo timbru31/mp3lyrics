@@ -35,7 +35,7 @@ jobs:
       - image: ruby:2.6
 workflows:
   version: 2
-  all_jdks:
+  all_rubys:
     jobs:
       - ruby2.4
       - ruby2.5
