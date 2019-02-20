@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  build:
+    parallelism: 3
+    docker:
+      - image: ruby:2.4-alpine
+      - image: ruby:2.5-alpine
+      - image: ruby:2.6-alpine
+    steps:
+      - checkout
+
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      - restore_cache:
+          keys:
+            - mp3lyrics-{{ checksum "Gemfile.lock" }}
+            - mp3lyrics-
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      - save_cache:
+          key: mp3lyrics-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Run specs
+          command: bundle exec rake
