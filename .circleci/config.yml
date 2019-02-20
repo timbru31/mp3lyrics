@@ -1,32 +1,42 @@
-version: 2
-jobs:
-  build:
-    parallelism: 3
-    docker:
-      - image: ruby:2.4
-      - image: ruby:2.5
-      - image: ruby:2.6
+_job_base: &job_base
     steps:
       - checkout
-
       - run:
           name: Which bundler?
           command: bundle -v
-
       - restore_cache:
           keys:
             - mp3lyrics-{{ checksum "Gemfile.lock" }}
             - mp3lyrics-
-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
-
       - save_cache:
           key: mp3lyrics-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-
       - run:
           name: Run specs
-          command: bundle exec rake
+          command: bundle exec rake TEST='spec/**/[!az]*_spec.rb'
+
+version: 2
+jobs:
+  ruby2.4:
+    <<: *job_base
+    docker:
+      - image: ruby:2.4
+  ruby2.5:
+    <<: *job_base
+    docker:
+      - image: ruby:2.5
+  ruby2.6:
+    <<: *job_base
+    docker:
+      - image: ruby:2.6
+workflows:
+  version: 2
+  all_jdks:
+    jobs:
+      - ruby2.4
+      - ruby2.5
+      - ruby2.6
