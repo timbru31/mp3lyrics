@@ -3,9 +3,9 @@ jobs:
   build:
     parallelism: 3
     docker:
-      - image: ruby:2.4-alpine
-      - image: ruby:2.5-alpine
-      - image: ruby:2.6-alpine
+      - image: ruby:2.4-slim
+      - image: ruby:2.5-slim
+      - image: ruby:2.6-slim
     steps:
       - checkout
 
