@@ -3,16 +3,13 @@ version: "{build}"
 clone_depth: 1
 
 install:
-  - cinst wget
-  - cmd: wget https://curl.haxx.se/ca/cacert.pem -O C:\cacert.pem
-  - SET SSL_CERT_FILE=C:\cacert.pem
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
   - ruby --version
   - gem --version
   - bundler --version
   - bundle install
 
-build: off
+build: "off"
 
 test_script:
   - bundle exec rake
