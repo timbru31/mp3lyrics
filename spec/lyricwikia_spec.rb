@@ -39,7 +39,7 @@ describe LyricWikia, 'Lyrics fetching' do
   describe 'with the song Enter Shikari - Gandhi Mate, Gandhi' do
     it 'fetches the right lyrics from LyricWikia' do
       lyrics = @wiki.get_lyrics('Enter Shikari', 'Gandhi Mate, Gandhi')
-      lyrics.must_equal enter_shikari_lyrics
+      _(lyrics).must_equal enter_shikari_lyrics
     end
   end
 

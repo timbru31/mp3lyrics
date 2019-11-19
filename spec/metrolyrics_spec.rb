@@ -17,7 +17,7 @@ describe MetroLyrics, 'Lyrics fetching' do
   describe 'with the song Breaking Benjamin - Evil Angel' do
     it 'fetches the right lyrics from MetroLyrics' do
       lyrics = @wiki.get_lyrics('Breaking Benjamin', 'Evil Angel')
-      lyrics.must_equal breaking_benjamin_lyrics
+      _(lyrics).must_equal breaking_benjamin_lyrics
     end
   end
 

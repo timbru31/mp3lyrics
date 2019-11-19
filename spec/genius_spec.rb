@@ -24,7 +24,7 @@ describe Genius, 'Lyrics fetching' do
   describe 'with the song Linkin Park - Numb' do
     it 'fetches the right lyrics from Genius' do
       lyrics = @wiki.get_lyrics('Linkin Park', 'Numb')
-      lyrics.must_equal numb_lyrics
+      _(lyrics).must_equal numb_lyrics
     end
   end
 
