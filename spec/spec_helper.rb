@@ -2,7 +2,7 @@ require 'simplecov'
 require 'coveralls'
 require 'minitest/autorun'
 
-if ENV['APPVEYOR'] != 'true' && ENV['CIRCLECI'] != 'true'
+if ENV['APPVEYOR'] != 'true'
   SimpleCov.formatters = [Coveralls::SimpleCov::Formatter]
 end
 

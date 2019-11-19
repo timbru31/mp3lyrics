@@ -1,6 +1,5 @@
 # MP3Lyrics
 [![Build Status](https://img.shields.io/travis/timbru31/mp3lyrics.svg)](https://travis-ci.org/timbru31/mp3lyrics)
-[![Circle CI](https://img.shields.io/circleci/project/timbru31/mp3lyrics.svg)](https://circleci.com/gh/timbru31/mp3lyrics)
 [![Build status](https://ci.appveyor.com/api/projects/status/c7misjwgqj4dc26d?svg=true)](https://ci.appveyor.com/project/timbru31/mp3lyrics)
 
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
