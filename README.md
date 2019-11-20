@@ -62,13 +62,6 @@ gem install bundler
 bundle install
 ```
 
-### A note for Windows users
-
-I have successfully run the CLI on Windows. RubyInstaller works fine, just make sure to skip the development group of the Gemfile
-```shell
-bundle install --without development
-```
-
 ## Usage
 
 ```shell
