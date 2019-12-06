@@ -11,7 +11,7 @@ GEM
     byebug (11.0.1)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
-    coveralls_reborn (0.13.3)
+    coveralls_reborn (0.13.4)
       json (~> 2.1)
       simplecov (~> 0.17.1)
       term-ansicolor (~> 1.6)
@@ -71,7 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (>= 6.0.1)
-  coveralls_reborn (~> 0.13.3)
+  coveralls_reborn (~> 0.13.4)
   minitest (>= 5.13.0)
   nokogiri (>= 1.10.5)
   pry-byebug (>= 3.7.0)
