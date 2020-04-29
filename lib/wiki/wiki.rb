@@ -31,7 +31,7 @@ class Wiki
   end
 
   def prepare_url(uri_str)
-    uri_str.gsub!('%EF%BB%BF', '') # fix BOM
-    URI.parse(uri_str)
+    bom_fixed_uri = uri_str.gsub('%EF%BB%BF', '') # fix BOM
+    URI.parse(bom_fixed_uri)
   end
 end
