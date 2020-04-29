@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'mp3info'
 require 'require_all'
 
@@ -75,6 +77,7 @@ files = Dir.glob("#{dir}/**/*")
 files.each do |file|
   filename = File.extname(file)
   next unless filename == '.mp3'
+
   Mp3Info.open(file) do |mp3|
     artist = mp3.tag.artist || mp3.tag1.artist || mp3.tag2.artist
     title = mp3.tag.title || mp3.tag1.title || mp3.tag2.title
@@ -86,9 +89,7 @@ files.each do |file|
     # Either no tag is set, the mp3 file has no USLT tag or we override anyway
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
       lyrics = nil
-      if wiki_to_use.nil? || wiki_to_use == 'lyricwiki'
-        lyrics = LyricWiki.new.get_lyrics(artist, title)
-      end
+      lyrics = LyricWiki.new.get_lyrics(artist, title) if wiki_to_use.nil? || wiki_to_use == 'lyricwiki'
       if wiki_to_use.nil? || wiki_to_use == 'genius'
         lyrics = Genius.new.get_lyrics(artist, title) if lyrics.nil?
       end

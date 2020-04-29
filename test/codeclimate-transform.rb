@@ -1,4 +1,5 @@
 #! /bin/ruby
+# frozen_string_literal: true
 
 # Temporary hack to get CodeClimate to work with SimpleCov 0.18 JSON format until issue is fixed
 # upstream: https://github.com/codeclimate/test-reporter/issues/413

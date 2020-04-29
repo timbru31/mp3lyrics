@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './wiki'
 
 # Fetches the lyrics from Genius (formerly known as Rap Genius)
@@ -12,6 +14,7 @@ class Genius < Wiki
 
     res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", limit)
     return nil unless res.is_a? Net::HTTPSuccess
+
     lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyrics"]//p[1]')
     lyrics.inner_html.gsub('<br>', "\r").gsub(%r{</?[^>]+>}, '').delete("\n")
   end
