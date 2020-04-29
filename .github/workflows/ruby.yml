@@ -6,26 +6,26 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-        ruby: [ 2.5, 2.6, 2.7 ]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        ruby: [2.5, 2.6, 2.7]
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
 
-    - name: Version information
-      run: ruby -v
+      - name: Version information
+        run: ruby -v
 
-    - name: Install dependencies
-      run: bundle install
+      - name: Install dependencies
+        run: bundle install
 
-    - name: Run tests
-      run: bundle exec rake
+      - name: Run tests
+        run: bundle exec rake
 
   coverage:
     needs: [test]
@@ -33,18 +33,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7
 
-    - name: Install dependencies
-      run: bundle install
-
-    - uses: paambaati/codeclimate-action@v2.6.0
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: |
-          bundle exec rake
-          ruby spec/codeclimate-transform.rb
+      - uses: paambaati/codeclimate-action@v2.6.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: |
+            bundle install
+            bundle exec rake
+            ruby spec/codeclimate-transform.rb
