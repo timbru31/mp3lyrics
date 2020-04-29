@@ -41,9 +41,11 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
+    - name: Patch CodeClimate bug
+      run: ruby spec/codeclimate-transform.rb
+
     - uses: paambaati/codeclimate-action@v2.6.0
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
         coverageCommand: bundle exec rake
-        debug: true
