@@ -56,14 +56,13 @@ By dropping the need (and support) of iTunes running somewhere in the background
 ## Installation
 
 ```shell
-gem install bundler
-bundle install
+gem install mp3lyrics
 ```
 
 ## Usage
 
 ```shell
-./mp3lyrics.rb <dir> [-override true/false] [-use lyricwiki/genius/metrolyrics/azlyrics]
+mp3lyrics <dir> [-override true/false] [-use lyricwiki/genius/metrolyrics/azlyrics]
 ```
 
 **dir** is the folder with your music, it's iterated recursively.  
