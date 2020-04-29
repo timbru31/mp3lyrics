@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |s|
   s.name        = 'mp3lyrics'
-  s.version     = '0.1.0'
-  s.date        = '2010-04-28'
+  s.version     = '0.1.1'
+  s.date        = '2020-04-29'
   s.summary     = 'CLI for mp3 lyrics fetching'
   s.description = 'CLI for mp3 lyrics fetching. Uses ruby-mp3info and fetches different lyric wikis'
   s.authors     = ['Tim Brust']
