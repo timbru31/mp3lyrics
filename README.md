@@ -2,7 +2,6 @@
 [![Ruby](https://github.com/timbru31/mp3lyrics/workflows/Ruby/badge.svg)](https://github.com/timbru31/mp3lyrics/actions?query=workflow%3ARuby)
 
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
-[![Coverage Status](https://img.shields.io/coveralls/timbru31/mp3lyrics.svg)](https://coveralls.io/github/timbru31/mp3lyrics?branch=master)
 ![Code Climate](https://img.shields.io/codeclimate/maintainability/timbru31/mp3lyrics.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/mp3lyrics)](https://dependabot.com)
@@ -51,7 +50,7 @@ By dropping the need (and support) of iTunes running somewhere in the background
 2. Nokogiri for HTML parsing
 3. mp3info as a MP3 library
 4. require_all for easier requiring of the wiki_api folder
-5. For testing purposes you should install rubocop, rake, minitest and optionally coverage reporters for CodeClimate and Coveralls
+5. For testing purposes you should install rubocop, rake, minitest and optionally coverage reporters for CodeClimate
 
 ## Installation
 

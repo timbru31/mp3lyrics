@@ -11,7 +11,6 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls_reborn', '~> 0.15.1', require: false
   gem 'minitest', '>=5.14.0'
   gem 'rake', '>=13.0.1'
   gem 'simplecov', '>=0.18.5', require: false
