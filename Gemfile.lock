@@ -23,10 +23,11 @@ GEM
     jaro_winkler (1.5.4)
     json (2.3.0)
     method_source (1.0.0)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.0)
-    nokogiri (1.10.9)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.0.rc2)
+      mini_portile2 (~> 2.5.0)
+    nokogiri (1.11.0.rc2-x64-mingw32)
     parallel (1.19.1)
     parser (2.7.1.1)
       ast (~> 2.4.0)
@@ -68,12 +69,13 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   activesupport (>= 6.0.2.2)
   coveralls_reborn (~> 0.15.1)
   minitest (>= 5.14.0)
-  nokogiri (>= 1.10.9)
+  nokogiri (>= 1.11.0.rc2)
   pry-byebug (>= 3.9.0)
   rake (>= 13.0.1)
   require_all (>= 3.0.0)
