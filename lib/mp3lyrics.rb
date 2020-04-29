@@ -2,7 +2,7 @@
 require 'mp3info'
 require 'require_all'
 
-require_all './lib/'
+require_all './lib/wiki/'
 
 def to_b(string)
   !(string =~ /^(true|t|yes|y|1)$/i).nil?

@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require_relative '../lib/genius'
+require_relative '../lib/wiki/genius'
 
 numb_lyrics = "[Verse 1: Chester Bennington]\rI'm tired of being what you want me to be\rFeeling so faithless, lost under the surface\r" \
   "I don't know what you're expecting of me\rPut under the pressure of walking in your shoes\r\r[Pre-Chorus: Chester Bennington &amp; " \

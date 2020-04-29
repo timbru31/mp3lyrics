@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require_relative '../lib/lyricwiki'
+require_relative '../lib/wiki/lyricwiki'
 
 enter_shikari_lyrics = "Now, I don't know about you, but I don't think the primary purpose of your "\
   "life, of my life and the entirety of the human race's is just to blindly consume to support a "\

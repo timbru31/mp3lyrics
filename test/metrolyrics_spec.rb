@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require_relative '../lib/metrolyrics'
+require_relative '../lib/wiki/metrolyrics'
 
 breaking_benjamin_lyrics = "Hold it together\rBirds of a feather\rNothing but lies and crooked wings\rI have the "\
   "answer\rSpreading the cancer\rYou are the faith inside me\rNo\rDon't leave me to die here\rHelp me survive here "\

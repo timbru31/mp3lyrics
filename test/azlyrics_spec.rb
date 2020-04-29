@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require_relative '../lib/azlyrics'
+require_relative '../lib/wiki/azlyrics'
 
 rise_against_lyrics = "He said \"Son, have you seen the world?\rWell, what would you say if I "\
   "said that you could?\rJust carry this gun and you'll even get paid\"\rI said \"That "\
