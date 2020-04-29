@@ -13,7 +13,7 @@ def usage_message(override_options, use_options)
 end
 
 override_options = [true, false]
-use_options = %w[lyricwikia genius metrolyrics azlyrics]
+use_options = %w[lyricwiki genius metrolyrics azlyrics]
 
 if ARGV.length.even? ||
    ARGV.count('-override') > 1 ||
@@ -86,8 +86,8 @@ files.each do |file|
     # Either no tag is set, the mp3 file has no USLT tag or we override anyway
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
       lyrics = nil
-      if wiki_to_use.nil? || wiki_to_use == 'lyricwikia'
-        lyrics = LyricWikia.new.get_lyrics(artist, title)
+      if wiki_to_use.nil? || wiki_to_use == 'lyricwiki'
+        lyrics = LyricWiki.new.get_lyrics(artist, title)
       end
       if wiki_to_use.nil? || wiki_to_use == 'genius'
         lyrics = Genius.new.get_lyrics(artist, title) if lyrics.nil?

@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require_relative '../lib/lyricwikia'
+require_relative '../lib/lyricwiki'
 
 enter_shikari_lyrics = "Now, I don't know about you, but I don't think the primary purpose of your "\
   "life, of my life and the entirety of the human race's is just to blindly consume to support a "\
@@ -31,13 +31,13 @@ enter_shikari_lyrics = "Now, I don't know about you, but I don't think the prima
   "emergency frequencies\r\rEmergency frequencies\r\rEmergency frequencies\r\rEmergency "\
   "frequencies\r\rEmergency frequencies"
 
-describe LyricWikia, 'Lyrics fetching' do
+describe LyricWiki, 'Lyrics fetching' do
   before do
-    @wiki = LyricWikia.new
+    @wiki = LyricWiki.new
   end
 
   describe 'with the song Enter Shikari - Gandhi Mate, Gandhi' do
-    it 'fetches the right lyrics from LyricWikia' do
+    it 'fetches the right lyrics from LyricWiki' do
       lyrics = @wiki.get_lyrics('Enter Shikari', 'Gandhi Mate, Gandhi')
       _(lyrics).must_equal enter_shikari_lyrics
     end

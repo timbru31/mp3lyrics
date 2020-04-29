@@ -1,15 +1,15 @@
 require_relative './wiki'
 
-# Fetches the lyrics from LyricWikia
-# Lyrics are stored accessed via the URL schema http://lyrics.wikia.com/ARTIST:SONG
+# Fetches the lyrics from LyricWiki
+# Lyrics are stored accessed via the URL schema https://lyrics.fandom.com/wiki/ARTIST:SONG
 # They are inside //div[@class="lyricbox"], a div with the class "lyricbox"
 # There are hidden comments and script tags, that needs to be removed.
-class LyricWikia < Wiki
+class LyricWiki < Wiki
   def get_lyrics(artist, song, limit = 10)
     artist = artist.tr(' ', '_')
     song = song.tr(' ', '_')
 
-    res = fetch("http://lyrics.wikia.com/#{artist}:#{song}", limit)
+    res = fetch("https://lyrics.fandom.com/wiki/#{artist}:#{song}", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
     lyrics = Nokogiri::HTML(res.body).xpath('//div[@class="lyricbox"]')

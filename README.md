@@ -13,7 +13,7 @@
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWikia](http://lyrics.wikia.com), [MetroLyrics](http://metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWiki](https://lyrics.fandom.com/wiki/LyricWikim), [MetroLyrics](http://metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
 The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](http://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
@@ -22,7 +22,7 @@ The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text tr
 
 Because I wanted to try another language than Java.
 
-#### Why are you not using the LyricWikia API?
+#### Why are you not using the LyricWiki API?
 
 ~~Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricWiki_API/REST) the lyrics can't be fully retrieved, most likely due to licensing issues.~~
 They no longer offer an API since January 2016.
@@ -64,7 +64,7 @@ bundle install
 ## Usage
 
 ```shell
-./mp3lyrics.rb <dir> [-override true/false] [-use lyricwikia/genius/metrolyrics/azlyrics]
+./mp3lyrics.rb <dir> [-override true/false] [-use lyricwiki/genius/metrolyrics/azlyrics]
 ```
 **dir** is the folder with your music, it's iterated recursively.  
 **override** is a boolean toggle to override existing lyrics (defaults to *false*).  
@@ -79,7 +79,7 @@ bundle exec rake
 
 ## Future plans // ToDo
 
-- ~~Add support to other lyrics sites when 404 is returned from LyricWikia~~
+- ~~Add support to other lyrics sites when 404 is returned from LyricWiki~~
 - GUI for easier usage (maybe)
 - Add test cases, see [#1](https://github.com/timbru31/mp3lyrics/issues/1)
 
