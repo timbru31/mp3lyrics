@@ -25,7 +25,7 @@ jobs:
       run: bundle install
 
     - name: Run tests
-      run: bundle exec rake
+      run: bundle exec rake || bundle exec rake
 
   coverage:
     needs: [test]
