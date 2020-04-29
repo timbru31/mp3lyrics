@@ -38,11 +38,11 @@ jobs:
         with:
           ruby-version: 2.7
 
+      - name: Install dependencies
+        run: bundle install
+
       - uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: |
-            bundle install
-            bundle exec rake
-            ruby spec/codeclimate-transform.rb
+          coverageCommand: bundle exec rake && ruby spec/codeclimate-transform.rb
