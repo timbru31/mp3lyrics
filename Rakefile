@@ -22,7 +22,7 @@ Rake::Task['test'].enhance do
       end
     end
 
-    puts 'Patchin .resultset.json for CodeClimate compatability'
+    puts 'Patching .resultset.json for CodeClimate compatibility'
     filename = 'coverage/.resultset.json'
     contents = JSON.parse(File.read(filename))
     # overwrite
