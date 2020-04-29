@@ -1,8 +1,9 @@
 # MP3Lyrics
+
 [![Ruby](https://github.com/timbru31/mp3lyrics/workflows/Ruby/badge.svg)](https://github.com/timbru31/mp3lyrics/actions?query=workflow%3ARuby)
 
-[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/timbru31/mp3lyrics.svg)](https://codeclimate.com/github/timbru31/mp3lyrics/coverage)
-![Code Climate](https://img.shields.io/codeclimate/maintainability/timbru31/mp3lyrics.svg)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/timbru31/mp3lyrics)](https://codeclimate.com/github/timbru31/mp3lyrics)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/timbru31/mp3lyrics)](https://codeclimate.com/github/timbru31/mp3lyrics)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/mp3lyrics/badge.svg)](https://snyk.io/test/github/timbru31/mp3lyrics)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/mp3lyrics)](https://dependabot.com)
 
@@ -54,7 +55,6 @@ By dropping the need (and support) of iTunes running somewhere in the background
 
 ## Installation
 
-
 ```shell
 gem install bundler
 bundle install
@@ -65,13 +65,15 @@ bundle install
 ```shell
 ./mp3lyrics.rb <dir> [-override true/false] [-use lyricwiki/genius/metrolyrics/azlyrics]
 ```
+
 **dir** is the folder with your music, it's iterated recursively.  
-**override** is a boolean toggle to override existing lyrics (defaults to *false*).  
+**override** is a boolean toggle to override existing lyrics (defaults to _false_).  
 **use** is a specific wiki to be used to download lyrics (all wikis are used by default).
 
 ## Tests
 
 To execute the tests run
+
 ```shell
 bundle exec rake
 ```
@@ -83,4 +85,5 @@ bundle exec rake
 - Add test cases, see [#1](https://github.com/timbru31/mp3lyrics/issues/1)
 
 ---
+
 Built by (c) Tim Brust and contributors. Released under the MIT license.
