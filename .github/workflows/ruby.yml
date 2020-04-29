@@ -25,7 +25,7 @@ jobs:
         run: bundle install
 
       - name: Run tests
-        run: bundle exec rake
+        run: ake
 
   coverage:
     needs: [test]
@@ -45,4 +45,4 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: bundle exec rake && ruby spec/codeclimate-transform.rb
+          coverageCommand: rake

@@ -16,7 +16,10 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     method_source (1.0.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.0)
+    nokogiri (1.11.0.rc2)
+      mini_portile2 (~> 2.5.0)
     nokogiri (1.11.0.rc2-x64-mingw32)
     parallel (1.19.1)
     parser (2.7.1.1)
@@ -52,6 +55,7 @@ GEM
     zeitwerk (2.3.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
