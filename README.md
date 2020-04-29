@@ -13,8 +13,8 @@
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWiki](https://lyrics.fandom.com/wiki/LyricWikim), [MetroLyrics](http://metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
-The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](http://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki), [MetroLyrics](https://www.metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
+The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](https://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
 
