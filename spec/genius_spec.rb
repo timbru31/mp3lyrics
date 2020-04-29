@@ -5,7 +5,7 @@ numb_lyrics = "[Verse 1: Chester Bennington]\rI'm tired of being what you want m
   "I don't know what you're expecting of me\rPut under the pressure of walking in your shoes\r\r[Pre-Chorus: Chester Bennington &amp; " \
   "Mike Shinoda]\rCaught in the undertow, just caught in the undertow\rEvery step that I take is another mistake to you\rCaught in the " \
   "undertow, just caught in the undertow\r\r[Chorus: Chester Bennington]\rI've become so numb, I can't feel you there\rBecome so tired" \
-  ", so much more aware\rI'm becoming this, all I want to do\rIs be more like me and be less like you!\r\r[Verse 2: Chester Bennington]" \
+  ", so much more aware\rI'm becoming this, all I want to do\rIs be more like me and be less like you\r\r[Verse 2: Chester Bennington]" \
   "\rCan't you see that you're smothering me?\rHolding too tightly, afraid to lose control\r'Cause everything that you thought I would be" \
   "\rHas fallen apart, right in front of you\r\r[Pre-Chorus: Chester Bennington &amp; Mike Shinoda]\rCaught in the undertow, just " \
   "caught in the undertow\rEvery step that I take is another mistake to you\rCaught in the undertow, just caught in the undertow\rAnd " \
