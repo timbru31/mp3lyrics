@@ -13,7 +13,7 @@
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki), [MetroLyrics](https://www.metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [MetroLyrics](https://www.metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
 The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](https://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
@@ -25,7 +25,7 @@ Because I wanted to try another language than Java.
 #### Why are you not using the LyricWiki API?
 
 ~~Although they have got a pretty neat [REST API](http://api.wikia.com/wiki/LyricWiki_API/REST) the lyrics can't be fully retrieved, most likely due to licensing issues.~~
-They no longer offer an API since January 2016.
+They no longer offer an API since January 2016. The site has since been shut down as of October 2020.
 
 #### Why are you not using musiXmatch API?
 
@@ -62,7 +62,7 @@ gem install mp3lyrics
 ## Usage
 
 ```shell
-mp3lyrics <dir> [-override true/false] [-use lyricwiki/genius/metrolyrics/azlyrics]
+mp3lyrics <dir> [-override true/false] [-use genius/metrolyrics/azlyrics]
 ```
 
 **dir** is the folder with your music, it's iterated recursively.  
