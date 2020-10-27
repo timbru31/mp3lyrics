@@ -27,22 +27,7 @@ jobs:
       - name: Run tests
         run: rake TEST='test/**/[!genius]*_spec.rb'
 
-  coverage:
-    needs: [test]
-    name: coverage
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      - name: Install dependencies
-        run: bundle install
-
-      - uses: paambaati/codeclimate-action@v2.7.4
+      - if: matrix.os == 'ubuntu-latest' && matrix.ruby == '2.7' && success() && contains(github.ref, 'master') && github.event_name != 'pull_request'
+        uses: paambaati/codeclimate-action@v2.7.4
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: rake TEST='test/**/[!genius]*_spec.rb'
