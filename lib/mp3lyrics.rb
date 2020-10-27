@@ -11,7 +11,7 @@ def to_b(string)
 end
 
 def usage_message(override_options, use_options)
-  'Usage: ./mp3lyrics.rb <dir> [-override ' + override_options.join('/') + '] [-use ' + use_options.join('/') + ']'
+  "Usage: ./mp3lyrics.rb <dir> [-override #{override_options.join('/')}] [-use #{use_options.join('/')}]"
 end
 
 override_options = [true, false]

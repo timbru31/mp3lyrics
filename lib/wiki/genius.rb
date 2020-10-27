@@ -13,7 +13,7 @@ class Genius < Wiki
     res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", limit)
     return nil unless res.is_a? Net::HTTPSuccess
 
-    lyrics = Nokogiri::HTML(res.body).xpath('//div[starts-with(@class, "Lyrics__Container")]')
-    lyrics.inner_html.gsub('<br>', "\r").gsub(%r{</?[^>]+>}, '').delete("\n")
+    lyrics = Nokogiri::HTML(res.body).xpath("//div[starts-with(@class, 'lyrics') or starts-with(@class, 'Lyrics__Container')]")
+    lyrics.inner_html.gsub('<br>', "\r").gsub(%r{</?[^>]+>}, '').delete("\n").strip
   end
 end
