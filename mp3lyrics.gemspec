@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib}/**/*.rb', 'bin/*', 'LICENSE', '*.md']
   s.homepage = 'https://github.com/timbru31/'
   s.license = 'MIT'
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_ruby_version = '>= 2.5.0'
   s.executables << 'mp3lyrics'
 end

@@ -2,3 +2,4 @@ Layout/LineLength:
   Max: 140
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 2.5
