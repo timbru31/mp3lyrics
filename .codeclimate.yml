@@ -6,11 +6,11 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
+        - ruby
   bundler-audit:
     enabled: true
 ratings:
   paths:
-  - "**.rb"
-  - Gemfile.lock
+    - "**.rb"
+    - Gemfile.lock
 exclude_paths: []
