@@ -8,7 +8,7 @@ breaking_benjamin_lyrics = "Hold it together\rBirds of a feather\rNothing but li
   "alone\rDon't remember\rPut me to sleep\rEvil angel\rOpen your wings\rEvil angel\rI'm a believer Nothing could be "\
   "worse\rAll these imaginary friends\rHiding betrayal\rDriving the nail\rHoping to find a savior\rNo\rDon't leave "\
   "me to die here\rHelp me survive here alone\rDon't surrender\rPut me to sleep\rEvil angel\rOpen your wings\rEvil "\
-  "angel\rFly over me\rEvil angel\rWhy can't I breathe\rEvil angel\rPut me to sleepEvil angel\rOpen your wings\rEvil "\
+  "angel\rFly over me\rEvil angel\rWhy can't I breathe\rEvil angel\rPut me to sleep Evil angel\rOpen your wings\rEvil "\
   "angel\rFly over me\rEvil angel\rWhy can't I breathe\rEvil angel"
 
 describe MetroLyrics, 'Lyrics fetching' do
