@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        ruby: [2.5, 2.6, 2.7]
+        ruby: [2.5, 2.6, 2.7, 3.0]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: rake TEST='test/**/[!genius]*_spec.rb'
 
-      - if: matrix.os == 'ubuntu-latest' && matrix.ruby == '2.7' && success() && contains(github.ref, 'master') && github.event_name != 'pull_request'
-        uses: paambaati/codeclimate-action@v2.7.4
+      - if: matrix.os == 'ubuntu-latest' && matrix.ruby == '3.0' && success() && contains(github.ref, 'master') && github.event_name != 'pull_request'
+        uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
