@@ -8,8 +8,8 @@ require_relative './wiki'
 # There are hidden comments, which need to be removed.
 class AZLyrics < Wiki
   def get_lyrics(artist, song, limit = 10)
-    artist = artist.delete(' ').parameterize
-    song = song.delete(' ').parameterize
+    artist = artist.delete(' ').gsub(/('|`|´|’|\?|\(|\))/, '').parameterize
+    song = song.delete(' ').gsub(/('|`|´|’|\?|\(|\))/, '').gsub(/(?:\(?feat.*\)?)/, '').parameterize
 
     res = fetch("https://www.azlyrics.com/lyrics/#{artist.downcase}/#{song.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess

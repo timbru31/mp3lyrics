@@ -69,6 +69,14 @@ mp3lyrics <dir> [-override true/false] [-use genius/metrolyrics/azlyrics]
 **override** is a boolean toggle to override existing lyrics (defaults to _false_).  
 **use** is a specific wiki to be used to download lyrics (all wikis are used by default).
 
+### Development usage
+
+The same options as above apply, but the binary has to be invoked from
+
+```shell
+./lib/mp3lyrics.rb
+```
+
 ## Tests
 
 To execute the tests run

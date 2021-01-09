@@ -7,8 +7,8 @@ require_relative './wiki'
 # They are inside //div[starts-with(@class, "Lyrics__Container")]
 class Genius < Wiki
   def get_lyrics(artist, song, limit = 10)
-    artist = artist.tr(' ', '-').parameterize
-    song = song.tr(' ', '-').parameterize
+    artist = artist.tr(' ', '-').gsub(/('|`|´|’)/, '').gsub(/(?:\(?feat.*\)?)/, '').parameterize
+    song = song.tr(' ', '-').gsub(/('|`|´|’)/, '').gsub(/(?:\(?feat.*\)?)/, '').parameterize
 
     res = fetch("https://genius.com/#{artist.downcase}-#{song.downcase}-lyrics", limit)
     return nil unless res.is_a? Net::HTTPSuccess

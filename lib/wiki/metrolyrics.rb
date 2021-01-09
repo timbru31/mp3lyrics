@@ -9,7 +9,7 @@ require_relative './wiki'
 class MetroLyrics < Wiki
   def get_lyrics(artist, song, limit = 10)
     artist = artist.tr(' ', '-').parameterize
-    song = song.tr(' ', '-').parameterize
+    song = song.tr(' ', '-').gsub(/(?:\(?feat.*\)?)/, '').parameterize
 
     res = fetch("https://www.metrolyrics.com/#{song.downcase}-lyrics-#{artist.downcase}.html", limit)
     return nil unless res.is_a? Net::HTTPSuccess

@@ -32,7 +32,8 @@ wiki_to_use = nil
 
 i = 1
 while i < ARGV.length
-  if ARGV[i] == '-override'
+  case ARGV[i]
+  when '-override'
     if override_options.include?(to_b(ARGV[i + 1]))
       override = to_b(ARGV[i + 1])
     else
@@ -40,7 +41,7 @@ while i < ARGV.length
       puts usage_message(override_options, use_options)
       exit
     end
-  elsif ARGV[i] == '-use'
+  when '-use'
     if use_options.include?(ARGV[i + 1])
       wiki_to_use = ARGV[i + 1]
     else
@@ -90,12 +91,8 @@ files.each do |file|
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
       lyrics = nil
       lyrics = Genius.new.get_lyrics(artist, title) if wiki_to_use.nil? || wiki_to_use == 'genius'
-      if wiki_to_use.nil? || wiki_to_use == 'metrolyrics'
-        lyrics = MetroLyrics.new.get_lyrics(artist, title) if lyrics.nil?
-      end
-      if wiki_to_use.nil? || wiki_to_use == 'azlyrics'
-        lyrics = AZLyrics.new.get_lyrics(artist, title) if lyrics.nil?
-      end
+      lyrics = MetroLyrics.new.get_lyrics(artist, title) if (wiki_to_use.nil? || wiki_to_use == 'metrolyrics') && lyrics.nil?
+      lyrics = AZLyrics.new.get_lyrics(artist, title) if (wiki_to_use.nil? || wiki_to_use == 'azlyrics') && lyrics.nil?
       if lyrics.nil?
         puts "Did not find any lyrics\n\r"
       else

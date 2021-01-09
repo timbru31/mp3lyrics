@@ -61,6 +61,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   activesupport (>= 6.0.3.4)
