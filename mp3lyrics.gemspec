@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |s|
   s.name = 'mp3lyrics'
-  s.version = '0.1.1'
-  s.date = '2020-04-29'
+  s.version = '0.1.2'
+  s.date = '2021-01-09'
   s.summary = 'CLI for mp3 lyrics fetching'
   s.description = 'CLI for mp3 lyrics fetching. Uses ruby-mp3info and fetches different lyric wikis'
   s.authors = ['Tim Brust']
@@ -13,4 +13,12 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.required_ruby_version = '>= 2.5.0'
   s.executables << 'mp3lyrics'
+
+  if s.respond_to?(:metadata=)
+    s.metadata = {
+      'bug_tracker_uri' => 'https://github.com/timbru31/mp3lyrics/issues?q=is%3Aopen+is%3Aissue',
+      'changelog_uri' => 'https://github.com/timbru31/mp3lyrics/blob/master/CHANGELOG.md',
+      'source_code_uri' => 'https://github.com/timbru31/mp3lyrics/'
+    }
+  end
 end
