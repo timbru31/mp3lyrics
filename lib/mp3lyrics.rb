@@ -15,7 +15,7 @@ def usage_message(override_options, use_options)
 end
 
 override_options = [true, false]
-use_options = %w[genius metrolyrics azlyrics]
+use_options = %w[genius azlyrics]
 
 if ARGV.length.even? ||
    ARGV.count('-override') > 1 ||
@@ -91,7 +91,6 @@ files.each do |file|
     if !mp3.hastag2? || (mp3.hastag2? && !mp3.tag2.key?('USLT')) || override
       lyrics = nil
       lyrics = Genius.new.get_lyrics(artist, title) if wiki_to_use.nil? || wiki_to_use == 'genius'
-      lyrics = MetroLyrics.new.get_lyrics(artist, title) if (wiki_to_use.nil? || wiki_to_use == 'metrolyrics') && lyrics.nil?
       lyrics = AZLyrics.new.get_lyrics(artist, title) if (wiki_to_use.nil? || wiki_to_use == 'azlyrics') && lyrics.nil?
       if lyrics.nil?
         puts "Did not find any lyrics\n\r"
