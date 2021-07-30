@@ -13,7 +13,7 @@
 
 ## Info
 
-MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [MetroLyrics](https://www.metrolyrics.com), [AZLyrics](https://www.azlyrics.com) and [Genius](https://genius.com).
+MP3Lyrics is a tool written in Ruby (currently only CLI) to download song lyrics from [AZLyrics](https://www.azlyrics.com) or [Genius](https://genius.com).
 The lyrics are added to the mp3 file via the [USLT (Unsynchronised lyric/text transcription)](https://id3.org/id3v2.4.0-frames) tag (with the power of [ruby-mp3info](https://github.com/moumar/ruby-mp3info)).
 
 ## Motivation
@@ -33,7 +33,7 @@ Simply because they charge me (the developer) for retrieving the lyrics.
 
 #### Why are you not using MetroLyrics API?
 
-I don't have an API key (yet).
+The site has been shut down as of July 2021.
 
 #### Why are you not using Genius API?
 
@@ -62,7 +62,7 @@ gem install mp3lyrics
 ## Usage
 
 ```shell
-mp3lyrics <dir> [-override true/false] [-use genius/metrolyrics/azlyrics]
+mp3lyrics <dir> [-override true/false] [-use genius/azlyrics]
 ```
 
 **dir** is the folder with your music, it's iterated recursively.  
